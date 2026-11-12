@@ -1,0 +1,5 @@
+netuid: 28
+top_n: 30
+# UIDs in this list are retained in stats and highlighted in the dashboard,
+# even when they are not currently in the top 30.
+favorites: []

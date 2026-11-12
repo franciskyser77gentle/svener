@@ -1,0 +1,2 @@
+observed_at,date,rank,uid,coldkey,hotkey,alpha_stake,tao_balance,incentive,emission,rank_change,alpha_change,tao_change
+2026-01-01T00:15:00+00:00,2026-01-01,1,101,5SampleColdkey,5SampleHotkey,123.45,4.2,0.8,12.4,,,

@@ -1,0 +1,37 @@
+name: Daily subnet 28 snapshot
+on:
+  schedule:
+    - cron: "15 0 * * *"
+  workflow_dispatch:
+    inputs:
+      backfill_days:
+        description: "Optional number of earlier days to attempt"
+        required: false
+        default: "0"
+permissions:
+  contents: write
+concurrency: sven28m-daily
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: |
+          python -m pip install -e .
+          python -m pip install -r requirements.txt
+      - name: Collect snapshot
+        env:
+          TAOSTATS_API_KEY: ${{ secrets.TAOSTATS_API_KEY }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          python -m sven28m_monitor.collector --backfill-days "${{ inputs.backfill_days || '0' }}"
+          python -m sven28m_monitor.sheets
+      - name: Commit data
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add data/
+          git diff --cached --quiet || git commit -m "data: daily subnet 28 snapshot"
+          git push
