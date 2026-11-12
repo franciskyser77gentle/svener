@@ -41,10 +41,10 @@
         "incentive": 0.2339208057,
         "emission": 34.527228464,
         "rank": 1,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": 5,
-        "alpha_change": 34.527228766,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -66,10 +66,10 @@
         "incentive": 0.1593957427,
         "emission": 23.52821348,
         "rank": 2,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": 5,
-        "alpha_change": 23.528213655,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -91,10 +91,10 @@
         "incentive": 0.1054856184,
         "emission": 15.570256645,
         "rank": 3,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": 6,
-        "alpha_change": 15.570256806,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -116,10 +116,10 @@
         "incentive": 0.0957198444,
         "emission": 14.129840615,
         "rank": 4,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": -2,
-        "alpha_change": 14.129840755,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -141,10 +141,10 @@
         "incentive": 0.0874189364,
         "emission": 12.903392974,
         "rank": 5,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": -1,
-        "alpha_change": 12.903393096,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -166,11 +166,11 @@
         "incentive": 0.0847638666,
         "emission": 12.513228825,
         "rank": 6,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
+        "rank_change": 0,
+        "alpha_change": 0.0,
+        "tao_change": 0.0
       }
     ]
   },
@@ -191,10 +191,10 @@
         "incentive": 0.0776379034,
         "emission": 11.461495289,
         "rank": 7,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": -4,
-        "alpha_change": 11.461495423,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -216,10 +216,10 @@
         "incentive": 0.0733958953,
         "emission": 10.83509503,
         "rank": 8,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": -7,
-        "alpha_change": 10.835095121000002,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -241,10 +241,10 @@
         "incentive": 0.0140230411,
         "emission": 2.071823894,
         "rank": 9,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": -1,
-        "alpha_change": 2.0718239250000003,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -266,10 +266,10 @@
         "incentive": 0.0080262455,
         "emission": 1.18598993,
         "rank": 10,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": 7,
-        "alpha_change": 1.1859899819999997,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -291,10 +291,10 @@
         "incentive": 0.0067750057,
         "emission": 1.000472736,
         "rank": 11,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": -6,
-        "alpha_change": 1.0004727859999996,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -316,10 +316,10 @@
         "incentive": 0.0057373922,
         "emission": 0.848351798,
         "rank": 12,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": -2,
-        "alpha_change": 0.8483518450000007,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -341,10 +341,10 @@
         "incentive": 0.0048218509,
         "emission": 0.712598283,
         "rank": 13,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": -1,
-        "alpha_change": 0.7125982940000002,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -366,10 +366,10 @@
         "incentive": 0.0045624475,
         "emission": 0.675225883,
         "rank": 14,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
         "rank_change": 0,
-        "alpha_change": 0.675225893,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -391,10 +391,10 @@
         "incentive": 0.0032196536,
         "emission": 0.475974182,
         "rank": 15,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": 1,
-        "alpha_change": 0.4759741900000023,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -416,10 +416,10 @@
         "incentive": 0.0030365454,
         "emission": 0.449474013,
         "rank": 16,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": 7,
-        "alpha_change": 0.44947402099999995,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -441,10 +441,10 @@
         "incentive": 0.0029297322,
         "emission": 0.433753358,
         "rank": 17,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": 1,
-        "alpha_change": 0.4337533650000003,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -466,10 +466,10 @@
         "incentive": 0.0029144732,
         "emission": 0.432350057,
         "rank": 18,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": -5,
-        "alpha_change": 0.4323500629999999,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -491,10 +491,10 @@
         "incentive": 0.0019226368,
         "emission": 0.285103522,
         "rank": 19,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": -4,
-        "alpha_change": 0.2851035620000002,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -516,10 +516,10 @@
         "incentive": 0.0018921187,
         "emission": 0.280786466,
         "rank": 20,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": -1,
-        "alpha_change": 0.28078650499999996,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -541,11 +541,11 @@
         "incentive": 0.0011902037,
         "emission": 0.176477768,
         "rank": 21,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
+        "rank_change": 0,
+        "alpha_change": 0.0,
+        "tao_change": 0.0
       }
     ]
   },
@@ -566,10 +566,10 @@
         "incentive": 0.0011596857,
         "emission": 0.173265097,
         "rank": 22,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": -1,
-        "alpha_change": 0.17326513400000465,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -591,10 +591,10 @@
         "incentive": 0.0010376135,
         "emission": 0.154296168,
         "rank": 23,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": -3,
-        "alpha_change": 0.1542961709999986,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -616,11 +616,11 @@
         "incentive": 0.0009613184,
         "emission": 0.14359934,
         "rank": 24,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
+        "rank_change": 0,
+        "alpha_change": 0.0,
+        "tao_change": 0.0
       }
     ]
   },
@@ -641,11 +641,11 @@
         "incentive": 0.0009002823,
         "emission": 0.134277289,
         "rank": 25,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
+        "rank_change": 0,
+        "alpha_change": 0.0,
+        "tao_change": 0.0
       }
     ]
   },
@@ -666,11 +666,11 @@
         "incentive": 0.0007629511,
         "emission": 0.114612517,
         "rank": 26,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
+        "rank_change": 0,
+        "alpha_change": 0.0,
+        "tao_change": 0.0
       }
     ]
   },
@@ -691,10 +691,10 @@
         "incentive": 0.0007629511,
         "emission": 0.112856414,
         "rank": 27,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": -3,
-        "alpha_change": 0.11285641699999993,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -716,10 +716,10 @@
         "incentive": 0.0005798428,
         "emission": 0.086996003,
         "rank": 28,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": 1,
-        "alpha_change": 0.08699603900000064,
+        "rank_change": 0,
+        "alpha_change": 0.0,
         "tao_change": 0.0
       }
     ]
@@ -741,11 +741,11 @@
         "incentive": 0.0005645838,
         "emission": 0.083901758,
         "rank": 29,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
+        "rank_change": 0,
+        "alpha_change": 0.0,
+        "tao_change": 0.0
       }
     ]
   },
@@ -766,11 +766,11 @@
         "incentive": 0.0005340658,
         "emission": 0.079418851,
         "rank": 30,
-        "observed_at": "2026-11-12T20:26:54+00:00",
+        "observed_at": "2026-11-12T20:34:22+00:00",
         "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
+        "rank_change": 0,
+        "alpha_change": 0.0,
+        "tao_change": 0.0
       }
     ]
   }
