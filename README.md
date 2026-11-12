@@ -39,13 +39,16 @@ appear in the ranking.
 
 ## API, limits, and backfill
 
-The collector uses `https://api.taostats.io/api/v1/neurons?netuid=28` with both
-Bearer and `X-API-Key` headers for compatibility with TaoStats key formats.
-`TAOSTATS_NEURONS_ENDPOINT` and `TAOSTATS_BASE_URL` can override this if
-TaoStats changes its endpoint. Requests have a timeout, exponential backoff for
-429/5xx, and stop on authentication errors. The exact quota depends on the
-TaoStats free plan and can change; one normal daily run makes one paginated
-request, so it stays well below typical free quotas. TaoStats free plans
+The collector uses the current documented endpoint
+`https://api.taostats.io/v1/subnets/metagraph?netuid=28&limit=256` and orders by
+emission descending. The API key is sent exactly as the docs specify:
+`Authorization: <key>` (no `Bearer` prefix). It also sends a normal User-Agent
+and `Accept: application/json`. `TAOSTATS_NEURONS_ENDPOINT` and
+`TAOSTATS_BASE_URL` can override this if TaoStats changes its endpoint.
+Requests have a timeout, exponential backoff for 429/5xx, and include a
+truncated, key-redacted provider response body in failures. The exact quota
+depends on the TaoStats free plan and can change; one normal daily run makes
+one paginated request, so it stays well below typical free quotas. TaoStats free plans
 generally do not provide arbitrary historical neuron snapshots. Manual
 `workflow_dispatch` has a `backfill_days` input; the collector attempts each
 date using the API timestamp parameter, and safely records no row when the

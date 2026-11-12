@@ -31,31 +31,43 @@ def _number(obj, *names):
 class TaoStats:
     """Small dependency-free client; endpoint and key header are configurable."""
     def __init__(self, key, base_url=None, opener=urlopen, sleep=time.sleep):
-        self.key, self.base = key, (base_url or os.getenv("TAOSTATS_BASE_URL","https://api.taostats.io/api/v1")).rstrip("/")
+        self.key, self.base = key, (base_url or os.getenv("TAOSTATS_BASE_URL","https://api.taostats.io/v1")).rstrip("/")
         self.opener, self.sleep = opener, sleep
 
     def fetch(self, netuid, at=None):
-        endpoint=os.getenv("TAOSTATS_NEURONS_ENDPOINT", f"{self.base}/neurons")
-        params={"netuid": netuid, "limit": 256}
+        endpoint=os.getenv("TAOSTATS_NEURONS_ENDPOINT", f"{self.base}/subnets/metagraph")
+        params={"netuid": netuid, "limit": 256, "order_by": "emission", "order_dir": "desc"}
         if at: params["timestamp"] = at
-        headers={"Accept":"application/json", "Authorization":f"Bearer {self.key}", "X-API-Key":self.key}
+        headers={"Accept":"application/json", "User-Agent":"sven28M/0.1 (+https://github.com/franciskyser77gentle/svener)",
+                 "Authorization":self.key}
         last=None
         for attempt in range(5):
             try:
                 req=Request(endpoint+"?"+urlencode(params), headers=headers)
                 with self.opener(req, timeout=30) as response:
                     if response.status == 429 or response.status >= 500:
-                        raise HTTPError(endpoint, response.status, "retryable", response.headers, None)
+                        body=response.read().decode(errors="replace")
+                        last=f"HTTP Error {response.status}: {self._safe_body(body)}"
+                        if attempt < 4: self.sleep(2 ** attempt)
+                        continue
                     payload=json.loads(response.read().decode())
                 rows=payload.get("data", payload) if isinstance(payload,dict) else payload
                 if isinstance(rows,dict):
                     rows=rows.get("neurons", rows.get("results", []))
                 return rows if isinstance(rows,list) else []
             except (HTTPError, URLError, TimeoutError, json.JSONDecodeError) as exc:
-                last=exc
+                if isinstance(exc, HTTPError):
+                    body=exc.read().decode(errors="replace")
+                    last=f"HTTP Error {exc.code}: {self._safe_body(body) or exc.reason}"
+                else:
+                    last=str(exc)
                 if isinstance(exc, HTTPError) and exc.code in (401,403,404): break
                 self.sleep(2 ** attempt)
         raise RuntimeError(f"TaoStats request failed: {last}")
+
+    def _safe_body(self, body):
+        """Expose enough provider detail to debug without ever echoing the key."""
+        return body.replace(self.key, "[REDACTED]")[:500].strip()
 
 def normalize(raw, netuid, top_n, observed):
     rows=[]
