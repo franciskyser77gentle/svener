@@ -24,12 +24,33 @@ def test_api_client_parses_mocked_response():
     assert seen["auth"] == "test-key"
     assert seen["user_agent"].startswith("sven28M/")
 
+def test_history_uses_documented_timestamp_params():
+    seen={}
+    def opener(request, timeout):
+        seen["url"]=request.full_url
+        return Response()
+    TaoStats("test-key",base_url="https://example.test/v1",opener=opener).fetch(
+        28, "2026-01-01T00:15:00+00:00")
+    assert "metagraph/history?" in seen["url"]
+    assert "timestamp_start=1767226500" in seen["url"]
+    assert "timestamp_end=1767312900" in seen["url"]
+    assert "order_by=timestamp" in seen["url"]
+
 def test_api_error_includes_redacted_response_body():
     def opener(request, timeout):
         raise HTTPError(request.full_url, 403, "Forbidden", {}, io.BytesIO(
             b'{"error":"Cloudflare denied request","token":"secret-key"}'))
     with pytest.raises(RuntimeError, match=r"Cloudflare denied request.*REDACTED"):
         TaoStats("secret-key", opener=opener).fetch(28)
+
+def test_client_does_not_retry_bad_request():
+    attempts=[]
+    def opener(request, timeout):
+        attempts.append(request.full_url)
+        raise HTTPError(request.full_url, 400, "Bad Request", {}, io.BytesIO(b"invalid query"))
+    with pytest.raises(RuntimeError, match="invalid query"):
+        TaoStats("test-key", opener=opener, sleep=lambda _: pytest.fail("4xx retried")).fetch(28)
+    assert len(attempts) == 1
 
 def test_normalize_ranks_emission_then_stake():
     rows=normalize([
