@@ -1,0 +1,13 @@
+{
+  "101": {
+    "uid": 101,
+    "coldkey": "5SampleColdkey",
+    "hotkey": "5SampleHotkey",
+    "snapshots": 1,
+    "best_rank": 1,
+    "last_seen": "2026-01-01",
+    "history": [
+      {"observed_at":"2026-01-01T00:15:00+00:00","date":"2026-01-01","rank":1,"uid":101,"coldkey":"5SampleColdkey","hotkey":"5SampleHotkey","alpha_stake":123.45,"tao_balance":4.2,"incentive":0.8,"emission":12.4,"rank_change":null,"alpha_change":null,"tao_change":null}
+    ]
+  }
+}

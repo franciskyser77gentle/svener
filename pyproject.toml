@@ -1,0 +1,13 @@
+[project]
+name = "sven28m"
+version = "0.1.0"
+description = "Daily monitor for Bittensor subnet 28"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
