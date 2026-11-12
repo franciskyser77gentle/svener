@@ -62,15 +62,15 @@ def test_normalize_ranks_emission_then_stake():
     assert rows[0]["alpha_stake"] == 4
     assert rows[0]["emission"] == 2
 
-def test_normalize_keeps_miners_only():
+def test_normalize_matches_taostats_miners_tab():
     rows=normalize([
         {"uid":1,"emission":9000000000,"validator_permit":True},
-        {"uid":2,"emission":8000000000,"is_child_key":True},
-        {"uid":3,"emission":7000000000,"is_owner_hotkey":True},
-        {"uid":4,"emission":6000000000,"hotkey":"owner-hotkey"},
-        {"uid":5,"emission":5000000000,"hotkey":"miner-hotkey"},
-    ],28,30,"2026-01-01T00:15:00+00:00",owner_keys={"owner-hotkey"})
-    assert [r["uid"] for r in rows] == [5]
+        {"uid":157,"emission":5000000000,"validator_permit":False,
+         "is_owner_hotkey":True,"coldkey":"owner-coldkey"},
+        {"uid":5,"emission":4000000000,"validator_permit":False,
+         "is_child_key":True,"hotkey":"miner-hotkey"},
+    ],28,30,"2026-01-01T00:15:00+00:00")
+    assert [r["uid"] for r in rows] == [157,5]
 
 def test_changes_and_outputs(tmp_path):
     old=[{"uid":"7","rank":"4","alpha_stake":"10","tao_balance":"2","date":"2026-01-01"}]
@@ -93,6 +93,5 @@ def test_collect_requires_api_key(tmp_path):
 
 def test_collect_rejects_empty_api_response(tmp_path, monkeypatch):
     monkeypatch.setattr(TaoStats, "fetch", lambda self, netuid, at=None: [])
-    monkeypatch.setattr(TaoStats, "owner_keys", lambda self, netuid: set())
-    with pytest.raises(RuntimeError, match="zero usable neuron rows"):
+    with pytest.raises(RuntimeError, match="zero eligible miners"):
         collect(api_key="test-key", data_dir=tmp_path)

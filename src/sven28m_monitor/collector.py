@@ -58,23 +58,6 @@ class TaoStats:
             if len(page_rows) < page_limit: break
         return rows
 
-    def owner_keys(self, netuid):
-        """Best-effort subnet owner lookup; metagraph role flags remain authoritative."""
-        endpoint=os.getenv("TAOSTATS_SUBNETS_ENDPOINT", f"{self.base}/subnets/latest")
-        try:
-            payload=self._get_payload(endpoint, {"netuid": netuid})
-        except RuntimeError:
-            return set()
-        values=payload.get("data", payload) if isinstance(payload,dict) else payload
-        if isinstance(values, dict): values=[values]
-        owners=set()
-        for item in values if isinstance(values,list) else []:
-            for key in ("owner_hotkey","owner","hotkey","coldkey"):
-                value=item.get(key) if isinstance(item,dict) else None
-                if isinstance(value,dict): value=value.get("ss58") or value.get("hex")
-                if value: owners.add(value)
-        return owners
-
     def _get(self, endpoint, params):
         payload=self._get_payload(endpoint, params)
         rows=payload.get("data", payload) if isinstance(payload,dict) else payload
@@ -110,12 +93,13 @@ class TaoStats:
         """Expose enough provider detail to debug without ever echoing the key."""
         return body.replace(self.key, "[REDACTED]")[:500].strip()
 
-def normalize(raw, netuid, top_n, observed, owner_keys=()):
+def normalize(raw, netuid, top_n, observed):
     rows=[]
     for item in raw:
-        if item.get("validator_permit") is True or item.get("is_child_key") is True:
-            continue
-        if item.get("is_owner_hotkey") is True or item.get("hotkey") in owner_keys or item.get("coldkey") in owner_keys:
+        # Match TaoStats' Miners tab: validator permit is the role boundary.
+        # Owner identity, stake size, and is_owner_hotkey do not make a row a
+        # validator; excluding them would hide legitimate miners (e.g. UID 157).
+        if item.get("validator_permit") is True:
             continue
         uid=item.get("uid", item.get("UID"))
         try: uid=int(uid)
@@ -184,10 +168,9 @@ def collect(api_key=None, data_dir=ROOT/"data", observed=None):
     if not key.strip():
         raise RuntimeError("TAOSTATS_API_KEY is missing or empty; add it as a GitHub Actions repository secret.")
     client=TaoStats(key)
-    rows=normalize(client.fetch(cfg["netuid"], observed if backfill else None),cfg["netuid"],cfg["top_n"],observed,
-                   owner_keys=client.owner_keys(cfg["netuid"]))
+    rows=normalize(client.fetch(cfg["netuid"], observed if backfill else None),cfg["netuid"],cfg["top_n"],observed)
     if not rows:
-        raise RuntimeError(f"TaoStats API returned zero usable neuron rows for netuid {cfg['netuid']}.")
+        raise RuntimeError(f"TaoStats API returned zero eligible miners for netuid {cfg['netuid']}.")
     write_data(enrich_changes(rows,previous),path)
     return rows
 
