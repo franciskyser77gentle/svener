@@ -54,19 +54,22 @@ def test_client_does_not_retry_bad_request():
 
 def test_normalize_ranks_emission_then_stake():
     rows=normalize([
-        {"uid":1,"emission":2,"coldkey":"c1","hotkey":"h1","alpha_stake":"4"},
-        {"uid":2,"emission":1,"incentive":9,"coldkey":"c2","hotkey":"h2","alpha_stake":"99"},
-        {"uid":3,"emission":0.5,"alpha_stake":100,"coldkey":"c3","hotkey":"h3"},
+        {"uid":1,"emission":"2000000000","coldkey":"c1","hotkey":"h1","alpha_stake":"4000000000"},
+        {"uid":2,"emission":"1000000000","incentive":9,"coldkey":"c2","hotkey":"h2","alpha_stake":"99000000000"},
+        {"uid":3,"emission":"500000000","alpha_stake":"100000000000","coldkey":"c3","hotkey":"h3"},
     ],28,3,"2026-01-01T00:15:00+00:00")
     assert [r["uid"] for r in rows] == [1,2,3]
+    assert rows[0]["alpha_stake"] == 4
+    assert rows[0]["emission"] == 2
 
 def test_changes_and_outputs(tmp_path):
     old=[{"uid":"7","rank":"4","alpha_stake":"10","tao_balance":"2","date":"2026-01-01"}]
-    rows=normalize([{"uid":7,"emission":4,"alpha_stake":13,"tao_balance":3}],28,1,
+    rows=normalize([{"uid":7,"emission":4000000000,"alpha_stake":13000000000,"root_stake":3000000000}],28,1,
                    "2026-01-02T00:15:00+00:00")
     enrich_changes(rows,old)
     assert rows[0]["rank_change"] == 3
     assert rows[0]["alpha_change"] == 3
+    assert rows[0]["tao_balance"] == 3
     write_data(rows,tmp_path)
     assert json.loads((tmp_path/"latest.json").read_text())["top"][0]["uid"] == 7
     assert "7" in json.loads((tmp_path/"stats.json").read_text())

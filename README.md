@@ -12,6 +12,15 @@ previous observed snapshot. `data/latest.json` drives the ranking page and
 `data/stats.json` retains history and aggregates for every UID that has ever
 entered the top 30.
 
+Token amounts are displayed in token units, not raw chain units: TaoStats
+documents `alpha_stake`, `root_stake`, and `emission` as RAO decimal strings,
+so the collector divides them by 1,000,000,000. `tao_balance` is populated
+from the metagraph row's documented `root_stake` (the neuron's TAO stake);
+TaoStats does not expose a coldkey free-wallet balance on this endpoint.
+Incentive is already a normalized 0–1 score and is not divided. The initial
+raw sample snapshot has been migrated; legacy rows that had no root-stake
+field remain null rather than inventing a balance.
+
 Ranking is descending **emission**, the most meaningful current reward measure
 for miners. If an API response does not provide emission, the collector falls
 back to incentive, then alpha stake. The ranking rule is stored in
