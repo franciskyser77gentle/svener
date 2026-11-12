@@ -9,3 +9,5 @@ jobs:
         with: {python-version: "3.12"}
       - run: python -m pip install -e ".[test]"
       - run: pytest -q
+      - run: node --check docs/settings.js
+      - run: node --check docs/app.js
