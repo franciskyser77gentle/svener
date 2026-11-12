@@ -60,6 +60,21 @@ the data; a zero-miner result fails without writing files.
 4. Open **Actions > Daily subnet 28 snapshot**, click **Run workflow**, and
    trigger the first run. The scheduled run then happens every day.
 
+### Dashboard settings
+
+Open the gear icon on the dashboard or visit `docs/settings.html`. Create a
+GitHub fine-grained token scoped to this repository with exactly these
+repository permissions: **Contents: Read and write**, **Secrets: Read and
+write**, and **Actions: Read and write**. The page uses the token only for
+`api.github.com`: it encrypts the TaoStats key in the browser before updating
+the Actions secret, commits `config.yaml`, and dispatches the daily workflow.
+It never displays, logs, or stores the TaoStats key.
+
+The GitHub token itself is stored in `sessionStorage` by default, or
+`localStorage` when “Remember on this device” is checked. This is convenient
+but means any JavaScript running on this origin could read a remembered token;
+use a short expiration, repository-only scope, and forget the token when done.
+
 Edit `config.yaml` to change `top_n` or add favorite UIDs (one `- 123` per
 line). Favorites are retained in the aggregate data and highlighted when they
 appear in the ranking.
