@@ -10,6 +10,8 @@ on:
         default: "0"
 permissions:
   contents: write
+  pages: write
+  id-token: write
 concurrency: sven28m-daily
 jobs:
   collect:
@@ -35,3 +37,19 @@ jobs:
           git add data/
           git diff --cached --quiet || git commit -m "data: daily subnet 28 snapshot"
           git push
+  deploy:
+    needs: collect
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deploy
+        uses: actions/deploy-pages@v4

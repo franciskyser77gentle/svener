@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
-from sven28m_monitor.collector import normalize, write_data, enrich_changes, TaoStats
+from sven28m_monitor.collector import normalize, write_data, enrich_changes, TaoStats, collect
+import pytest
 
 class Response:
     status=200
@@ -33,3 +34,12 @@ def test_changes_and_outputs(tmp_path):
 
 def test_malformed_uids_are_ignored():
     assert normalize([{"uid":"not-a-number"}],28,30,"2026-01-01T00:00:00Z") == []
+
+def test_collect_requires_api_key(tmp_path):
+    with pytest.raises(RuntimeError, match="TAOSTATS_API_KEY is missing"):
+        collect(api_key="", data_dir=tmp_path)
+
+def test_collect_rejects_empty_api_response(tmp_path, monkeypatch):
+    monkeypatch.setattr(TaoStats, "fetch", lambda self, netuid, at=None: [])
+    with pytest.raises(RuntimeError, match="zero usable neuron rows"):
+        collect(api_key="test-key", data_dir=tmp_path)

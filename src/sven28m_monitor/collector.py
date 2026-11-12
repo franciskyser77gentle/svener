@@ -120,22 +120,24 @@ def write_data(rows, data_dir=ROOT/"data", status="complete", error=None):
 def collect(api_key=None, data_dir=ROOT/"data", observed=None):
     cfg=config(); observed=observed or datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     path=Path(data_dir); previous=read_history(path/"snapshots.csv")
-    try:
-        rows=normalize(TaoStats(api_key or os.getenv("TAOSTATS_API_KEY","")).fetch(cfg["netuid"], observed),cfg["netuid"],cfg["top_n"],observed)
-        if not rows: raise RuntimeError("API returned no neuron rows")
-        write_data(enrich_changes(rows,previous),path)
-        return rows
-    except Exception as exc:
-        latest=path/"latest.json"
-        if latest.exists(): return []
-        write_data([],path,"unavailable",str(exc)); return []
+    key=api_key if api_key is not None else os.getenv("TAOSTATS_API_KEY","")
+    if not key.strip():
+        raise RuntimeError("TAOSTATS_API_KEY is missing or empty; add it as a GitHub Actions repository secret.")
+    rows=normalize(TaoStats(key).fetch(cfg["netuid"], observed),cfg["netuid"],cfg["top_n"],observed)
+    if not rows:
+        raise RuntimeError(f"TaoStats API returned zero usable neuron rows for netuid {cfg['netuid']}.")
+    write_data(enrich_changes(rows,previous),path)
+    return rows
 
 def main():
     p=argparse.ArgumentParser(); p.add_argument("--backfill-days",type=int,default=0); args=p.parse_args()
-    if args.backfill_days:
-        for days_ago in range(args.backfill_days, 0, -1):
-            observed=(datetime.now(timezone.utc)-timedelta(days=days_ago)).replace(hour=0,minute=15,second=0,microsecond=0).isoformat()
-            print(f"Backfill {observed}: {len(collect(observed=observed))} rows")
-    rows=collect(); print(f"Recorded {len(rows)} top-{config()['top_n']} rows.")
+    try:
+        if args.backfill_days:
+            for days_ago in range(args.backfill_days, 0, -1):
+                observed=(datetime.now(timezone.utc)-timedelta(days=days_ago)).replace(hour=0,minute=15,second=0,microsecond=0).isoformat()
+                print(f"Backfill {observed}: {len(collect(observed=observed))} rows")
+        rows=collect(); print(f"Recorded {len(rows)} top-{config()['top_n']} rows.")
+    except RuntimeError as exc:
+        raise SystemExit(f"ERROR: {exc}")
 
 if __name__=="__main__": main()
