@@ -1,8 +1,8 @@
 netuid: 28
 top_n: 30
 role: miners
-# Miner filter: validator_permit, is_owner_hotkey, is_child_key, and subnet
-# owner coldkey/hotkey are excluded using TaoStats metagraph/subnet fields.
+# Miner filter matches TaoStats' Miners tab: only validator_permit=true rows
+# are excluded. Owner identity, stake size, and child-key flags are retained.
 # UIDs in this list are retained in stats and highlighted in the dashboard,
 # even when they are not currently in the top 30.
 favorites: []

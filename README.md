@@ -21,12 +21,13 @@ Incentive is already a normalized 0–1 score and is not divided. The initial
 raw sample snapshot has been migrated; legacy rows that had no root-stake
 field remain null rather than inventing a balance.
 
-Ranking is **miners only**, sorted by descending emission and then incentive.
-The collector excludes rows where TaoStats reports `validator_permit: true`,
-`is_child_key: true`, or `is_owner_hotkey: true`, and excludes the subnet
-owner's hotkey/coldkey from the documented subnet metadata endpoint. It fetches
-additional metagraph pages when necessary before applying the filter, so
-top-30 means 30 eligible miners rather than the first 30 mixed-role rows.
+Ranking is **miners only**, matching TaoStats' Miners tab: sorted by descending
+emission and then incentive, with only rows where TaoStats reports
+`validator_permit: true` excluded. Owner identity, `is_owner_hotkey`,
+`is_child_key`, coldkey, and stake size are not used as exclusions; this keeps
+legitimate miners such as UID 157. The collector fetches additional metagraph
+pages before applying the filter, so top-30 means 30 eligible miners rather
+than the first 30 mixed-role rows.
 The exact role is configured as `role: miners` in `config.yaml` and the rule is
 also stored in `latest.json`.
 
@@ -39,9 +40,8 @@ authenticated three-UID API comparison could honestly be performed. The
 conversion was checked against the prior committed raw values for UIDs 3, 154,
 and 72: dividing alpha/emission by 1e9 matches the migrated token values.
 TaoStats documentation confirms `root_stake` is the available TAO stake field.
-The next authenticated run applies the API role fields and removes owner/
-validator rows; the committed no-key migration used only the documented-value
-heuristic described in its `legacy_filter_note`.
+The next authenticated run applies the same validator-permit rule to regenerate
+the data; a zero-miner result fails without writing files.
 
 ## Setup (beginner friendly)
 
