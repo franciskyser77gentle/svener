@@ -12,12 +12,16 @@ permissions:
   contents: write
   pages: write
   id-token: write
-concurrency: sven28m-daily
+concurrency: {group: daily-snapshot, cancel-in-progress: false}
 jobs:
   collect:
+    outputs:
+      pushed_sha: ${{ steps.push.outputs.pushed_sha }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
       - run: |
@@ -30,13 +34,28 @@ jobs:
         run: |
           python -m sven28m_monitor.collector --backfill-days "${{ inputs.backfill_days || '0' }}"
           python -m sven28m_monitor.sheets
-      - name: Commit data
+      - name: Commit and push data
+        id: push
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add data/
           git diff --cached --quiet || git commit -m "data: daily subnet 28 snapshot"
-          git push
+          for attempt in 1 2 3; do
+            # Rebase onto any merge or settings-page commit that landed while
+            # this run was collecting. -X theirs applies this run's data
+            # commit when data files conflict.
+            if git pull --rebase -X theirs origin main && git push origin HEAD:main; then
+              echo "pushed_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            if [ "$attempt" -lt 3 ]; then
+              sleep $((attempt * 2))
+            fi
+          done
+          echo "Unable to push the daily snapshot after 3 attempts." >&2
+          exit 1
   deploy:
     needs: collect
     runs-on: ubuntu-latest
@@ -46,7 +65,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}
+          ref: ${{ needs.collect.outputs.pushed_sha }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
