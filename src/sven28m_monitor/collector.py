@@ -28,6 +28,10 @@ def _number(obj, *names):
             except (TypeError, ValueError): pass
     return None
 
+def _rao(obj, *names):
+    value=_number(obj, *names)
+    return None if value is None else value / 1_000_000_000
+
 class TaoStats:
     """Small dependency-free client; endpoint and key header are configurable."""
     def __init__(self, key, base_url=None, opener=urlopen, sleep=time.sleep):
@@ -82,11 +86,13 @@ def normalize(raw, netuid, top_n, observed):
         try: uid=int(uid)
         except (TypeError,ValueError): continue
         incentive=_number(item,"incentive","incentive_percent","incentive_percentage")
-        emission=_number(item,"emission","emission_percent","emission_percentage")
-        stake=_number(item,"alpha_stake","alpha","stake","stake_alpha","total_stake")
+        emission=_rao(item,"emission","emission_percent","emission_percentage")
+        stake=_rao(item,"alpha_stake","alpha","stake","stake_alpha","total_alpha_stake")
         rows.append({"uid":uid, "coldkey":item.get("coldkey",item.get("cold_key","")),
           "hotkey":item.get("hotkey",item.get("hot_key","")), "alpha_stake":stake,
-          "tao_balance":_number(item,"tao_balance","balance","free_balance","tao"),
+          # TaoStats' metagraph does not expose a coldkey free balance. The
+          # documented root_stake is the row's TAO stake, also in RAO.
+          "tao_balance":_rao(item,"root_stake","tao_balance","balance","free_balance","tao"),
           "incentive":incentive, "emission":emission})
     # Emission is the most direct miner-facing ranking; incentive is a useful
     # fallback when an API response omits emission.
