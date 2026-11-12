@@ -1,4 +1,6 @@
 import json
+import io
+from urllib.error import HTTPError
 from pathlib import Path
 from sven28m_monitor.collector import normalize, write_data, enrich_changes, TaoStats, collect
 import pytest
@@ -10,8 +12,24 @@ class Response:
     def read(self): return b'{"data":[{"uid":9,"emission":7,"coldkey":"c","hotkey":"h"}]}'
 
 def test_api_client_parses_mocked_response():
-    client=TaoStats("test-key",base_url="https://example.test",opener=lambda request,timeout: Response())
+    seen={}
+    def opener(request, timeout):
+        seen["url"]=request.full_url
+        seen["auth"]=request.get_header("Authorization")
+        seen["user_agent"]=request.get_header("User-agent")
+        return Response()
+    client=TaoStats("test-key",base_url="https://example.test/v1",opener=opener)
     assert client.fetch(28)[0]["uid"] == 9
+    assert seen["url"] == "https://example.test/v1/subnets/metagraph?netuid=28&limit=256&order_by=emission&order_dir=desc"
+    assert seen["auth"] == "test-key"
+    assert seen["user_agent"].startswith("sven28M/")
+
+def test_api_error_includes_redacted_response_body():
+    def opener(request, timeout):
+        raise HTTPError(request.full_url, 403, "Forbidden", {}, io.BytesIO(
+            b'{"error":"Cloudflare denied request","token":"secret-key"}'))
+    with pytest.raises(RuntimeError, match=r"Cloudflare denied request.*REDACTED"):
+        TaoStats("secret-key", opener=opener).fetch(28)
 
 def test_normalize_ranks_emission_then_stake():
     rows=normalize([
