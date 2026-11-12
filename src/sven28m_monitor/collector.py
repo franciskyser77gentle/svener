@@ -35,9 +35,15 @@ class TaoStats:
         self.opener, self.sleep = opener, sleep
 
     def fetch(self, netuid, at=None):
-        endpoint=os.getenv("TAOSTATS_NEURONS_ENDPOINT", f"{self.base}/subnets/metagraph")
-        params={"netuid": netuid, "limit": 256, "order_by": "emission", "order_dir": "desc"}
-        if at: params["timestamp"] = at
+        if at:
+            endpoint=os.getenv("TAOSTATS_HISTORY_ENDPOINT", f"{self.base}/subnets/metagraph/history")
+            target=datetime.fromisoformat(at.replace("Z","+00:00"))
+            start=int(target.timestamp())
+            params={"netuid": netuid, "timestamp_start": start, "timestamp_end": start + 86400,
+                    "limit": 200, "order_by": "timestamp", "order_dir": "desc"}
+        else:
+            endpoint=os.getenv("TAOSTATS_NEURONS_ENDPOINT", f"{self.base}/subnets/metagraph")
+            params={"netuid": netuid, "limit": 256, "order_by": "emission", "order_dir": "desc"}
         headers={"Accept":"application/json", "User-Agent":"sven28M/0.1 (+https://github.com/franciskyser77gentle/svener)",
                  "Authorization":self.key}
         last=None
@@ -61,7 +67,7 @@ class TaoStats:
                     last=f"HTTP Error {exc.code}: {self._safe_body(body) or exc.reason}"
                 else:
                     last=str(exc)
-                if isinstance(exc, HTTPError) and exc.code in (401,403,404): break
+                if isinstance(exc, HTTPError) and 400 <= exc.code < 500: break
                 self.sleep(2 ** attempt)
         raise RuntimeError(f"TaoStats request failed: {last}")
 
@@ -130,12 +136,13 @@ def write_data(rows, data_dir=ROOT/"data", status="complete", error=None):
     (data_dir/"stats.json").write_text(json.dumps(stats,indent=2)+"\n")
 
 def collect(api_key=None, data_dir=ROOT/"data", observed=None):
-    cfg=config(); observed=observed or datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    cfg=config(); backfill=observed is not None
+    observed=observed or datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     path=Path(data_dir); previous=read_history(path/"snapshots.csv")
     key=api_key if api_key is not None else os.getenv("TAOSTATS_API_KEY","")
     if not key.strip():
         raise RuntimeError("TAOSTATS_API_KEY is missing or empty; add it as a GitHub Actions repository secret.")
-    rows=normalize(TaoStats(key).fetch(cfg["netuid"], observed),cfg["netuid"],cfg["top_n"],observed)
+    rows=normalize(TaoStats(key).fetch(cfg["netuid"], observed if backfill else None),cfg["netuid"],cfg["top_n"],observed)
     if not rows:
         raise RuntimeError(f"TaoStats API returned zero usable neuron rows for netuid {cfg['netuid']}.")
     write_data(enrich_changes(rows,previous),path)

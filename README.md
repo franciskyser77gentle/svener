@@ -48,12 +48,12 @@ and `Accept: application/json`. `TAOSTATS_NEURONS_ENDPOINT` and
 Requests have a timeout, exponential backoff for 429/5xx, and include a
 truncated, key-redacted provider response body in failures. The exact quota
 depends on the TaoStats free plan and can change; one normal daily run makes
-one paginated request, so it stays well below typical free quotas. TaoStats free plans
-generally do not provide arbitrary historical neuron snapshots. Manual
-`workflow_dispatch` has a `backfill_days` input; the collector attempts each
-date using the API timestamp parameter, and safely records no row when the
-plan/API cannot serve it. Existing data is never overwritten by an unavailable
-run.
+one paginated request, so it stays well below typical free quotas. Manual
+`workflow_dispatch` has a `backfill_days` input; those requests use the
+documented `/v1/subnets/metagraph/history` endpoint with
+`timestamp_start`/`timestamp_end` Unix-second filters, rather than adding an
+unsupported parameter to the live endpoint. If the plan cannot serve history,
+the run fails clearly without overwriting existing data.
 
 ## Development
 
