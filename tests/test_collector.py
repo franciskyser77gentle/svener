@@ -20,7 +20,7 @@ def test_api_client_parses_mocked_response():
         return Response()
     client=TaoStats("test-key",base_url="https://example.test/v1",opener=opener)
     assert client.fetch(28)[0]["uid"] == 9
-    assert seen["url"] == "https://example.test/v1/subnets/metagraph?netuid=28&limit=256&order_by=emission&order_dir=desc"
+    assert seen["url"] == "https://example.test/v1/subnets/metagraph?netuid=28&limit=256&order_by=emission&order_dir=desc&page=1"
     assert seen["auth"] == "test-key"
     assert seen["user_agent"].startswith("sven28M/")
 
@@ -62,6 +62,16 @@ def test_normalize_ranks_emission_then_stake():
     assert rows[0]["alpha_stake"] == 4
     assert rows[0]["emission"] == 2
 
+def test_normalize_keeps_miners_only():
+    rows=normalize([
+        {"uid":1,"emission":9000000000,"validator_permit":True},
+        {"uid":2,"emission":8000000000,"is_child_key":True},
+        {"uid":3,"emission":7000000000,"is_owner_hotkey":True},
+        {"uid":4,"emission":6000000000,"hotkey":"owner-hotkey"},
+        {"uid":5,"emission":5000000000,"hotkey":"miner-hotkey"},
+    ],28,30,"2026-01-01T00:15:00+00:00",owner_keys={"owner-hotkey"})
+    assert [r["uid"] for r in rows] == [5]
+
 def test_changes_and_outputs(tmp_path):
     old=[{"uid":"7","rank":"4","alpha_stake":"10","tao_balance":"2","date":"2026-01-01"}]
     rows=normalize([{"uid":7,"emission":4000000000,"alpha_stake":13000000000,"root_stake":3000000000}],28,1,
@@ -83,5 +93,6 @@ def test_collect_requires_api_key(tmp_path):
 
 def test_collect_rejects_empty_api_response(tmp_path, monkeypatch):
     monkeypatch.setattr(TaoStats, "fetch", lambda self, netuid, at=None: [])
+    monkeypatch.setattr(TaoStats, "owner_keys", lambda self, netuid: set())
     with pytest.raises(RuntimeError, match="zero usable neuron rows"):
         collect(api_key="test-key", data_dir=tmp_path)

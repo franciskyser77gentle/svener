@@ -12,11 +12,12 @@ FIELDS = ["observed_at","date","rank","uid","coldkey","hotkey","alpha_stake","ta
           "incentive","emission","rank_change","alpha_change","tao_change"]
 
 def config(path=ROOT / "config.yaml"):
-    values = {"netuid": 28, "top_n": 30, "favorites": []}
+    values = {"netuid": 28, "top_n": 30, "role": "miners", "favorites": []}
     for line in Path(path).read_text().splitlines():
         line=line.strip()
         if line.startswith("netuid:"): values["netuid"]=int(line.split(":",1)[1])
         elif line.startswith("top_n:"): values["top_n"]=int(line.split(":",1)[1])
+        elif line.startswith("role:"): values["role"]=line.split(":",1)[1].strip()
         elif line.startswith("- "): values["favorites"].append(int(line[2:]))
     return values
 
@@ -45,9 +46,43 @@ class TaoStats:
             start=int(target.timestamp())
             params={"netuid": netuid, "timestamp_start": start, "timestamp_end": start + 86400,
                     "limit": 200, "order_by": "timestamp", "order_dir": "desc"}
+            page_limit=200
         else:
             endpoint=os.getenv("TAOSTATS_NEURONS_ENDPOINT", f"{self.base}/subnets/metagraph")
             params={"netuid": netuid, "limit": 256, "order_by": "emission", "order_dir": "desc"}
+            page_limit=256
+        rows=[]
+        for page in range(1, 101):
+            page_rows=self._get(endpoint, {**params, "page": page})
+            rows.extend(page_rows)
+            if len(page_rows) < page_limit: break
+        return rows
+
+    def owner_keys(self, netuid):
+        """Best-effort subnet owner lookup; metagraph role flags remain authoritative."""
+        endpoint=os.getenv("TAOSTATS_SUBNETS_ENDPOINT", f"{self.base}/subnets/latest")
+        try:
+            payload=self._get_payload(endpoint, {"netuid": netuid})
+        except RuntimeError:
+            return set()
+        values=payload.get("data", payload) if isinstance(payload,dict) else payload
+        if isinstance(values, dict): values=[values]
+        owners=set()
+        for item in values if isinstance(values,list) else []:
+            for key in ("owner_hotkey","owner","hotkey","coldkey"):
+                value=item.get(key) if isinstance(item,dict) else None
+                if isinstance(value,dict): value=value.get("ss58") or value.get("hex")
+                if value: owners.add(value)
+        return owners
+
+    def _get(self, endpoint, params):
+        payload=self._get_payload(endpoint, params)
+        rows=payload.get("data", payload) if isinstance(payload,dict) else payload
+        if isinstance(rows,dict):
+            rows=rows.get("neurons", rows.get("results", []))
+        return rows if isinstance(rows,list) else []
+
+    def _get_payload(self, endpoint, params):
         headers={"Accept":"application/json", "User-Agent":"sven28M/0.1 (+https://github.com/franciskyser77gentle/svener)",
                  "Authorization":self.key}
         last=None
@@ -60,11 +95,7 @@ class TaoStats:
                         last=f"HTTP Error {response.status}: {self._safe_body(body)}"
                         if attempt < 4: self.sleep(2 ** attempt)
                         continue
-                    payload=json.loads(response.read().decode())
-                rows=payload.get("data", payload) if isinstance(payload,dict) else payload
-                if isinstance(rows,dict):
-                    rows=rows.get("neurons", rows.get("results", []))
-                return rows if isinstance(rows,list) else []
+                    return json.loads(response.read().decode())
             except (HTTPError, URLError, TimeoutError, json.JSONDecodeError) as exc:
                 if isinstance(exc, HTTPError):
                     body=exc.read().decode(errors="replace")
@@ -79,9 +110,13 @@ class TaoStats:
         """Expose enough provider detail to debug without ever echoing the key."""
         return body.replace(self.key, "[REDACTED]")[:500].strip()
 
-def normalize(raw, netuid, top_n, observed):
+def normalize(raw, netuid, top_n, observed, owner_keys=()):
     rows=[]
     for item in raw:
+        if item.get("validator_permit") is True or item.get("is_child_key") is True:
+            continue
+        if item.get("is_owner_hotkey") is True or item.get("hotkey") in owner_keys or item.get("coldkey") in owner_keys:
+            continue
         uid=item.get("uid", item.get("UID"))
         try: uid=int(uid)
         except (TypeError,ValueError): continue
@@ -94,11 +129,10 @@ def normalize(raw, netuid, top_n, observed):
           # documented root_stake is the row's TAO stake, also in RAO.
           "tao_balance":_rao(item,"root_stake","tao_balance","balance","free_balance","tao"),
           "incentive":incentive, "emission":emission})
-    # Emission is the most direct miner-facing ranking; incentive is a useful
-    # fallback when an API response omits emission.
-    rows.sort(key=lambda x: (x["emission"] if x["emission"] is not None else
-                             x["incentive"] if x["incentive"] is not None else
-                             x["alpha_stake"] if x["alpha_stake"] is not None else -1), reverse=True)
+    # Miner ranking is emission first, then incentive. Do not rank by stake:
+    # large validator/owner stake is not evidence of mining activity.
+    rows.sort(key=lambda x: (x["emission"] if x["emission"] is not None else -1,
+                             x["incentive"] if x["incentive"] is not None else -1), reverse=True)
     for rank,row in enumerate(rows[:top_n],1):
         row.update({"rank":rank,"observed_at":observed,"date":observed[:10],
                     "rank_change":None,"alpha_change":None,"tao_change":None})
@@ -127,9 +161,10 @@ def write_data(rows, data_dir=ROOT/"data", status="complete", error=None):
     with csv_path.open("w",newline="") as f:
         writer=csv.DictWriter(f,fieldnames=FIELDS); writer.writeheader()
         for r in history+rows: writer.writerow({k:r.get(k) for k in FIELDS})
-    latest={"schema_version":1,"monitor":"sven28M","netuid":28,"favorites":config()["favorites"],"status":status,
+    latest={"schema_version":1,"monitor":"sven28M","netuid":28,"role":config()["role"],
+            "favorites":config()["favorites"],"status":status,
             "observed_at":rows[0]["observed_at"] if rows else datetime.now(timezone.utc).isoformat(),
-            "ranking":"emission, then incentive, then alpha stake (descending)",
+            "ranking":"miners only: emission, then incentive (descending)",
             "top":rows,"error":error}
     (data_dir/"latest.json").write_text(json.dumps(latest,indent=2)+"\n")
     stats={}
@@ -148,7 +183,9 @@ def collect(api_key=None, data_dir=ROOT/"data", observed=None):
     key=api_key if api_key is not None else os.getenv("TAOSTATS_API_KEY","")
     if not key.strip():
         raise RuntimeError("TAOSTATS_API_KEY is missing or empty; add it as a GitHub Actions repository secret.")
-    rows=normalize(TaoStats(key).fetch(cfg["netuid"], observed if backfill else None),cfg["netuid"],cfg["top_n"],observed)
+    client=TaoStats(key)
+    rows=normalize(client.fetch(cfg["netuid"], observed if backfill else None),cfg["netuid"],cfg["top_n"],observed,
+                   owner_keys=client.owner_keys(cfg["netuid"]))
     if not rows:
         raise RuntimeError(f"TaoStats API returned zero usable neuron rows for netuid {cfg['netuid']}.")
     write_data(enrich_changes(rows,previous),path)
