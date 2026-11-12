@@ -24,31 +24,6 @@
       }
     ]
   },
-  "3": {
-    "uid": 3,
-    "coldkey": "5CA6rwAytZvvyZhLYEzo79627QEV422Q8kD51DEnTaRQxm45",
-    "hotkey": "5Evgh9QTXJLxYLusVy3tcY5S6Z3GgRSNDb9AzXUchX5dco3P",
-    "snapshots": 1,
-    "best_rank": 1,
-    "last_seen": "2026-11-12",
-    "history": [
-      {
-        "uid": 3,
-        "coldkey": "5CA6rwAytZvvyZhLYEzo79627QEV422Q8kD51DEnTaRQxm45",
-        "hotkey": "5Evgh9QTXJLxYLusVy3tcY5S6Z3GgRSNDb9AzXUchX5dco3P",
-        "alpha_stake": 2917545.450733216,
-        "tao_balance": null,
-        "incentive": 0.0005035477,
-        "emission": 110.31984187,
-        "rank": 1,
-        "observed_at": "2026-11-12T19:56:27+00:00",
-        "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
-      }
-    ]
-  },
   "154": {
     "uid": 154,
     "coldkey": "5Ebgqrc5F6jLKfFYmyV4crHtdiTNpWXVQLybLoTZ4TLdm6XW",
@@ -91,31 +66,6 @@
         "incentive": 0.2297856107,
         "emission": 33.918463805,
         "rank": 3,
-        "observed_at": "2026-11-12T19:56:27+00:00",
-        "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
-      }
-    ]
-  },
-  "18": {
-    "uid": 18,
-    "coldkey": "5GsbTgfvgCH4xdqSkiPb7EaBBFLHjWH5vfEALhJaewSFpZX9",
-    "hotkey": "5E2LP6EnZ54m3wS8s1yPvD5c3xo71kQroBw7aUVK32TKeZ5u",
-    "snapshots": 1,
-    "best_rank": 4,
-    "last_seen": "2026-11-12",
-    "history": [
-      {
-        "uid": 18,
-        "coldkey": "5GsbTgfvgCH4xdqSkiPb7EaBBFLHjWH5vfEALhJaewSFpZX9",
-        "hotkey": "5E2LP6EnZ54m3wS8s1yPvD5c3xo71kQroBw7aUVK32TKeZ5u",
-        "alpha_stake": 454262.98408575,
-        "tao_balance": null,
-        "incentive": 0.0,
-        "emission": 17.604182203,
-        "rank": 4,
         "observed_at": "2026-11-12T19:56:27+00:00",
         "date": "2026-11-12",
         "rank_change": null,
@@ -191,31 +141,6 @@
         "incentive": 0.0834821088,
         "emission": 12.323898244,
         "rank": 7,
-        "observed_at": "2026-11-12T19:56:27+00:00",
-        "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
-      }
-    ]
-  },
-  "180": {
-    "uid": 180,
-    "coldkey": "5E9fVY1jexCNVMjd2rdBsAxeamFGEMfzHcyTn2fHgdHeYc5p",
-    "hotkey": "5GBYAqFFAzbZ1jm1JGhoeQ4LRoRR3NYXqvSzeack9kSXkmTy",
-    "snapshots": 1,
-    "best_rank": 8,
-    "last_seen": "2026-11-12",
-    "history": [
-      {
-        "uid": 180,
-        "coldkey": "5E9fVY1jexCNVMjd2rdBsAxeamFGEMfzHcyTn2fHgdHeYc5p",
-        "hotkey": "5GBYAqFFAzbZ1jm1JGhoeQ4LRoRR3NYXqvSzeack9kSXkmTy",
-        "alpha_stake": 159610.793910551,
-        "tao_balance": null,
-        "incentive": 0.0,
-        "emission": 9.809408857,
-        "rank": 8,
         "observed_at": "2026-11-12T19:56:27+00:00",
         "date": "2026-11-12",
         "rank_change": null,
@@ -349,81 +274,6 @@
       }
     ]
   },
-  "245": {
-    "uid": 245,
-    "coldkey": "5FHxxe8ZKYaNmGcSLdG5ekxXeZDhQnk9cbpHdsJW8RunGpSs",
-    "hotkey": "5CkZKnmBibVnroN5Km96ZGuR6G5StTiuenFn8VivVzob8RVg",
-    "snapshots": 1,
-    "best_rank": 14,
-    "last_seen": "2026-11-12",
-    "history": [
-      {
-        "uid": 245,
-        "coldkey": "5FHxxe8ZKYaNmGcSLdG5ekxXeZDhQnk9cbpHdsJW8RunGpSs",
-        "hotkey": "5CkZKnmBibVnroN5Km96ZGuR6G5StTiuenFn8VivVzob8RVg",
-        "alpha_stake": 25080.002587979,
-        "tao_balance": null,
-        "incentive": 0.0,
-        "emission": 3.964406376,
-        "rank": 14,
-        "observed_at": "2026-11-12T19:56:27+00:00",
-        "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
-      }
-    ]
-  },
-  "14": {
-    "uid": 14,
-    "coldkey": "5FvrtJsvq95ByLtSMrSDgTBDML8NpjTuZbgX8xqaTjiaisNR",
-    "hotkey": "5E53v3EBWrjEpF1za57dS3hRQfmaombe483ttbPoDgby4frd",
-    "snapshots": 1,
-    "best_rank": 15,
-    "last_seen": "2026-11-12",
-    "history": [
-      {
-        "uid": 14,
-        "coldkey": "5FvrtJsvq95ByLtSMrSDgTBDML8NpjTuZbgX8xqaTjiaisNR",
-        "hotkey": "5E53v3EBWrjEpF1za57dS3hRQfmaombe483ttbPoDgby4frd",
-        "alpha_stake": 31505.443232062,
-        "tao_balance": null,
-        "incentive": 0.0,
-        "emission": 2.20343232,
-        "rank": 15,
-        "observed_at": "2026-11-12T19:56:27+00:00",
-        "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
-      }
-    ]
-  },
-  "165": {
-    "uid": 165,
-    "coldkey": "5Ek8i6wDRakJfJPM9wpJLYDE9G9uaqHLdARoewtTiLtbt33f",
-    "hotkey": "5G9hfkx9wGB1CLMT9WXkpHSAiYzjZb5o1Boyq4KAdDhjwrc5",
-    "snapshots": 1,
-    "best_rank": 16,
-    "last_seen": "2026-11-12",
-    "history": [
-      {
-        "uid": 165,
-        "coldkey": "5Ek8i6wDRakJfJPM9wpJLYDE9G9uaqHLdARoewtTiLtbt33f",
-        "hotkey": "5G9hfkx9wGB1CLMT9WXkpHSAiYzjZb5o1Boyq4KAdDhjwrc5",
-        "alpha_stake": 45505.299818208,
-        "tao_balance": null,
-        "incentive": 0.0,
-        "emission": 1.866012413,
-        "rank": 16,
-        "observed_at": "2026-11-12T19:56:27+00:00",
-        "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
-      }
-    ]
-  },
   "127": {
     "uid": 127,
     "coldkey": "5F4Eih76gumBMbH2Amuu7gRBB429wfKRP2LSaPiXAuR4YPWR",
@@ -499,31 +349,6 @@
       }
     ]
   },
-  "255": {
-    "uid": 255,
-    "coldkey": "5GW9X8GyXwA3VQbNhnzb6sJmfPvKBBJwx19hJrCseverjovV",
-    "hotkey": "5DcbDPH9n7FqSZTKrG49Yvdk2CpcH8MWmArzPZFgBXjWSL28",
-    "snapshots": 1,
-    "best_rank": 20,
-    "last_seen": "2026-11-12",
-    "history": [
-      {
-        "uid": 255,
-        "coldkey": "5GW9X8GyXwA3VQbNhnzb6sJmfPvKBBJwx19hJrCseverjovV",
-        "hotkey": "5DcbDPH9n7FqSZTKrG49Yvdk2CpcH8MWmArzPZFgBXjWSL28",
-        "alpha_stake": 881.49491745,
-        "tao_balance": null,
-        "incentive": 0.0,
-        "emission": 0.746956168,
-        "rank": 20,
-        "observed_at": "2026-11-12T19:56:27+00:00",
-        "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
-      }
-    ]
-  },
   "60": {
     "uid": 60,
     "coldkey": "5CyMPPx3Db7xfsjG4KEGskhB9u9pe4tGuhMFUGSBgwKLSgh4",
@@ -566,56 +391,6 @@
         "incentive": 0.0041351949,
         "emission": 0.610998931,
         "rank": 22,
-        "observed_at": "2026-11-12T19:56:27+00:00",
-        "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
-      }
-    ]
-  },
-  "225": {
-    "uid": 225,
-    "coldkey": "5EnXts8HKLv1o3qhFBGPaoZt1CjMd2g4RtKDpnp3A44xFCGK",
-    "hotkey": "5FLoWCDovMPeH3Gv4syQSZ8TuKcMv6N27g8diDU8zJSeRv8m",
-    "snapshots": 1,
-    "best_rank": 23,
-    "last_seen": "2026-11-12",
-    "history": [
-      {
-        "uid": 225,
-        "coldkey": "5EnXts8HKLv1o3qhFBGPaoZt1CjMd2g4RtKDpnp3A44xFCGK",
-        "hotkey": "5FLoWCDovMPeH3Gv4syQSZ8TuKcMv6N27g8diDU8zJSeRv8m",
-        "alpha_stake": 22545.071537685,
-        "tao_balance": null,
-        "incentive": 0.0,
-        "emission": 0.571848984,
-        "rank": 23,
-        "observed_at": "2026-11-12T19:56:27+00:00",
-        "date": "2026-11-12",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
-      }
-    ]
-  },
-  "9": {
-    "uid": 9,
-    "coldkey": "5FuzgvtfbZWdKSRxyYVPAPYNaNnf9cMnpT7phL3s2T3Kkrzo",
-    "hotkey": "5F1UJWEFGkUcyJvfAN2T3SePGP5PgXu6fmmVfUdfKhUe6s28",
-    "snapshots": 1,
-    "best_rank": 24,
-    "last_seen": "2026-11-12",
-    "history": [
-      {
-        "uid": 9,
-        "coldkey": "5FuzgvtfbZWdKSRxyYVPAPYNaNnf9cMnpT7phL3s2T3Kkrzo",
-        "hotkey": "5F1UJWEFGkUcyJvfAN2T3SePGP5PgXu6fmmVfUdfKhUe6s28",
-        "alpha_stake": 5448.739107558,
-        "tao_balance": null,
-        "incentive": 0.0,
-        "emission": 0.537949267,
-        "rank": 24,
         "observed_at": "2026-11-12T19:56:27+00:00",
         "date": "2026-11-12",
         "rank_change": null,

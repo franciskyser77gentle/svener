@@ -21,10 +21,27 @@ Incentive is already a normalized 0–1 score and is not divided. The initial
 raw sample snapshot has been migrated; legacy rows that had no root-stake
 field remain null rather than inventing a balance.
 
-Ranking is descending **emission**, the most meaningful current reward measure
-for miners. If an API response does not provide emission, the collector falls
-back to incentive, then alpha stake. The ranking rule is stored in
-`latest.json` so it is visible to the dashboard.
+Ranking is **miners only**, sorted by descending emission and then incentive.
+The collector excludes rows where TaoStats reports `validator_permit: true`,
+`is_child_key: true`, or `is_owner_hotkey: true`, and excludes the subnet
+owner's hotkey/coldkey from the documented subnet metadata endpoint. It fetches
+additional metagraph pages when necessary before applying the filter, so
+top-30 means 30 eligible miners rather than the first 30 mixed-role rows.
+The exact role is configured as `role: miners` in `config.yaml` and the rule is
+also stored in `latest.json`.
+
+TaoStats documents `emission` as a per-tempo emission amount, not a daily
+total; the dashboard labels it `Emission / tempo`. The separate
+`daily_mining_alpha_as_tao` field is not used for ranking.
+
+No `TAOSTATS_API_KEY` was available during this migration, so no new
+authenticated three-UID API comparison could honestly be performed. The
+conversion was checked against the prior committed raw values for UIDs 3, 154,
+and 72: dividing alpha/emission by 1e9 matches the migrated token values.
+TaoStats documentation confirms `root_stake` is the available TAO stake field.
+The next authenticated run applies the API role fields and removes owner/
+validator rows; the committed no-key migration used only the documented-value
+heuristic described in its `legacy_filter_note`.
 
 ## Setup (beginner friendly)
 
