@@ -1,8 +1,9 @@
 netuid: 28
 top_n: 30
 role: miners
-# Miner filter matches TaoStats' Miners tab: only validator_permit=true rows
-# are excluded. Owner identity, stake size, and child-key flags are retained.
+# Miner filter matches TaoStats' Miners tab: validator_trust=0, falling back
+# to dividends=0 when validator_trust is absent. Permit/owner/child flags do
+# not define the role.
 # UIDs in this list are retained in stats and highlighted in the dashboard,
 # even when they are not currently in the top 30.
 favorites: []

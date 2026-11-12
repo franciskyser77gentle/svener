@@ -33,6 +33,16 @@ def _rao(obj, *names):
     value=_number(obj, *names)
     return None if value is None else value / 1_000_000_000
 
+def _is_miner(item):
+    """A miner is not actively validating, matching TaoStats' Miners tab."""
+    validator_trust=item.get("validator_trust")
+    if validator_trust is not None:
+        return _number(item, "validator_trust") == 0
+    dividends=item.get("dividends")
+    if dividends is not None:
+        return _number(item, "dividends") == 0
+    return False
+
 class TaoStats:
     """Small dependency-free client; endpoint and key header are configurable."""
     def __init__(self, key, base_url=None, opener=urlopen, sleep=time.sleep):
@@ -95,12 +105,14 @@ class TaoStats:
 
 def normalize(raw, netuid, top_n, observed):
     rows=[]
+    eligible_count=0
+    uid157={key: None for key in ("validator_permit","validator_trust","dividends","incentive","is_child_key")}
     for item in raw:
-        # Match TaoStats' Miners tab: validator permit is the role boundary.
-        # Owner identity, stake size, and is_owner_hotkey do not make a row a
-        # validator; excluding them would hide legitimate miners (e.g. UID 157).
-        if item.get("validator_permit") is True:
+        if item.get("uid", item.get("UID")) == 157:
+            uid157={key:item.get(key) for key in uid157}
+        if not _is_miner(item):
             continue
+        eligible_count += 1
         uid=item.get("uid", item.get("UID"))
         try: uid=int(uid)
         except (TypeError,ValueError): continue
@@ -113,6 +125,10 @@ def normalize(raw, netuid, top_n, observed):
           # documented root_stake is the row's TAO stake, also in RAO.
           "tao_balance":_rao(item,"root_stake","tao_balance","balance","free_balance","tao"),
           "incentive":incentive, "emission":emission})
+    print(f"MINER_FILTER included={eligible_count} excluded={len(raw)-eligible_count} "
+          f"uid157 validator_permit={uid157['validator_permit']} "
+          f"validator_trust={uid157['validator_trust']} dividends={uid157['dividends']} "
+          f"incentive={uid157['incentive']} is_child_key={uid157['is_child_key']}")
     # Miner ranking is emission first, then incentive. Do not rank by stake:
     # large validator/owner stake is not evidence of mining activity.
     rows.sort(key=lambda x: (x["emission"] if x["emission"] is not None else -1,

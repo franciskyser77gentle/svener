@@ -9,7 +9,7 @@ class Response:
     status=200
     def __enter__(self): return self
     def __exit__(self,*args): pass
-    def read(self): return b'{"data":[{"uid":9,"emission":7,"coldkey":"c","hotkey":"h"}]}'
+    def read(self): return b'{"data":[{"uid":9,"emission":7,"validator_trust":0,"coldkey":"c","hotkey":"h"}]}'
 
 def test_api_client_parses_mocked_response():
     seen={}
@@ -54,27 +54,35 @@ def test_client_does_not_retry_bad_request():
 
 def test_normalize_ranks_emission_then_stake():
     rows=normalize([
-        {"uid":1,"emission":"2000000000","coldkey":"c1","hotkey":"h1","alpha_stake":"4000000000"},
-        {"uid":2,"emission":"1000000000","incentive":9,"coldkey":"c2","hotkey":"h2","alpha_stake":"99000000000"},
-        {"uid":3,"emission":"500000000","alpha_stake":"100000000000","coldkey":"c3","hotkey":"h3"},
+        {"uid":1,"emission":"2000000000","validator_trust":0,"coldkey":"c1","hotkey":"h1","alpha_stake":"4000000000"},
+        {"uid":2,"emission":"1000000000","validator_trust":0,"incentive":9,"coldkey":"c2","hotkey":"h2","alpha_stake":"99000000000"},
+        {"uid":3,"emission":"500000000","validator_trust":0,"alpha_stake":"100000000000","coldkey":"c3","hotkey":"h3"},
     ],28,3,"2026-01-01T00:15:00+00:00")
     assert [r["uid"] for r in rows] == [1,2,3]
     assert rows[0]["alpha_stake"] == 4
     assert rows[0]["emission"] == 2
 
-def test_normalize_matches_taostats_miners_tab():
+def test_normalize_matches_taostats_miners_tab(capsys):
     rows=normalize([
-        {"uid":1,"emission":9000000000,"validator_permit":True},
-        {"uid":157,"emission":5000000000,"validator_permit":False,
+        {"uid":1,"emission":9000000000,"validator_permit":True,"validator_trust":1},
+        {"uid":157,"emission":5000000000,"validator_permit":True,"validator_trust":0,"incentive":0.2,
          "is_owner_hotkey":True,"coldkey":"owner-coldkey"},
-        {"uid":5,"emission":4000000000,"validator_permit":False,
+        {"uid":5,"emission":4000000000,"validator_permit":False,"validator_trust":0,
          "is_child_key":True,"hotkey":"miner-hotkey"},
     ],28,30,"2026-01-01T00:15:00+00:00")
     assert [r["uid"] for r in rows] == [157,5]
+    assert "uid157 validator_permit=True validator_trust=0" in capsys.readouterr().out
+
+def test_miner_falls_back_to_zero_dividends():
+    rows=normalize([
+        {"uid":8,"emission":1000000000,"dividends":0},
+        {"uid":9,"emission":2000000000,"dividends":1},
+    ],28,30,"2026-01-01T00:15:00+00:00")
+    assert [r["uid"] for r in rows] == [8]
 
 def test_changes_and_outputs(tmp_path):
     old=[{"uid":"7","rank":"4","alpha_stake":"10","tao_balance":"2","date":"2026-01-01"}]
-    rows=normalize([{"uid":7,"emission":4000000000,"alpha_stake":13000000000,"root_stake":3000000000}],28,1,
+    rows=normalize([{"uid":7,"emission":4000000000,"validator_trust":0,"alpha_stake":13000000000,"root_stake":3000000000}],28,1,
                    "2026-01-02T00:15:00+00:00")
     enrich_changes(rows,old)
     assert rows[0]["rank_change"] == 3

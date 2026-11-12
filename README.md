@@ -21,13 +21,14 @@ Incentive is already a normalized 0–1 score and is not divided. The initial
 raw sample snapshot has been migrated; legacy rows that had no root-stake
 field remain null rather than inventing a balance.
 
-Ranking is **miners only**, matching TaoStats' Miners tab: sorted by descending
-emission and then incentive, with only rows where TaoStats reports
-`validator_permit: true` excluded. Owner identity, `is_owner_hotkey`,
-`is_child_key`, coldkey, and stake size are not used as exclusions; this keeps
-legitimate miners such as UID 157. The collector fetches additional metagraph
-pages before applying the filter, so top-30 means 30 eligible miners rather
-than the first 30 mixed-role rows.
+Ranking is **miners only**, matching TaoStats' Miners tab: a row is a miner
+when `validator_trust == 0`; when that field is missing, the collector falls
+back to `dividends == 0`. This deliberately keeps UID 157 even when its
+`validator_permit` is true, because TaoStats' Miners tab shows it with VTrust
+0. Owner identity, `is_owner_hotkey`, child-key status, coldkey, and stake size
+are not exclusions. Results are sorted by descending emission and then
+incentive. The collector fetches additional metagraph pages before applying
+the filter, so top-30 means 30 eligible miners.
 The exact role is configured as `role: miners` in `config.yaml` and the rule is
 also stored in `latest.json`.
 
