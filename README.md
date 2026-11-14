@@ -94,8 +94,17 @@ one paginated request, so it stays well below typical free quotas. Manual
 `workflow_dispatch` has a `backfill_days` input; those requests use the
 documented `/v1/subnets/metagraph/history` endpoint with
 `timestamp_start`/`timestamp_end` Unix-second filters, rather than adding an
-unsupported parameter to the live endpoint. If the plan cannot serve history,
-the run fails clearly without overwriting existing data.
+unsupported parameter to the live endpoint. Each day queries only a narrow
+window around 00:15 UTC, keeps the record for each UID closest to 00:15, and
+uses at most the two pages needed for a 256-neuron subnet at the history
+endpoint's 200-row limit. Requests are spaced to stay under roughly five per
+minute. Backfill replaces rows for its date, preserves `latest.json` from
+today's live run, and is safe to repeat. If the plan cannot serve history, the
+run fails clearly without overwriting existing data.
+
+To retrieve seven days, open **Actions > Daily subnet 28 snapshot > Run
+workflow**, enter `7` for **backfill_days**, and run it on `main`. The workflow
+then also records the current live snapshot.
 
 ## Development
 
