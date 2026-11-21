@@ -47,16 +47,33 @@ class TaoStats:
     """Small dependency-free client; endpoint and key header are configurable."""
     def __init__(self, key, base_url=None, opener=urlopen, sleep=time.sleep):
         self.key, self.base = key, (base_url or os.getenv("TAOSTATS_BASE_URL","https://api.taostats.io/v1")).rstrip("/")
-        self.opener, self.sleep = opener, sleep
+        self.opener, self.sleep, self.last_request = opener, sleep, 0
 
     def fetch(self, netuid, at=None):
         if at:
             endpoint=os.getenv("TAOSTATS_HISTORY_ENDPOINT", f"{self.base}/subnets/metagraph/history")
             target=datetime.fromisoformat(at.replace("Z","+00:00"))
             start=int(target.timestamp())
-            params={"netuid": netuid, "timestamp_start": start, "timestamp_end": start + 86400,
+            params={"netuid": netuid, "timestamp_start": start - 900, "timestamp_end": start + 900,
                     "limit": 200, "order_by": "timestamp", "order_dir": "desc"}
-            page_limit=200
+            # A narrow window around 00:15 avoids walking an entire day's
+            # history. Two pages cover a 256-neuron subnet at the API's
+            # documented history limit; records are deduplicated below.
+            rows=[]
+            for page in (1, 2):
+                page_rows=self._get(endpoint, {**params, "page": page})
+                rows.extend(page_rows)
+                if len(page_rows) < 200: break
+            nearest={}
+            for row in rows:
+                try: uid=int(row.get("uid", row.get("UID")))
+                except (TypeError,ValueError): continue
+                stamp=row.get("timestamp")
+                try: distance=abs(datetime.fromisoformat(stamp.replace("Z","+00:00")).timestamp()-start)
+                except (AttributeError,ValueError): distance=0
+                if uid not in nearest or distance < nearest[uid][0]:
+                    nearest[uid]=(distance,row)
+            return [pair[1] for pair in nearest.values()]
         else:
             endpoint=os.getenv("TAOSTATS_NEURONS_ENDPOINT", f"{self.base}/subnets/metagraph")
             params={"netuid": netuid, "limit": 256, "order_by": "emission", "order_dir": "desc"}
@@ -81,7 +98,11 @@ class TaoStats:
         last=None
         for attempt in range(5):
             try:
+                if self.last_request:
+                    wait=12-(time.monotonic()-self.last_request)
+                    if wait > 0: self.sleep(wait)
                 req=Request(endpoint+"?"+urlencode(params), headers=headers)
+                self.last_request=time.monotonic()
                 with self.opener(req, timeout=30) as response:
                     if response.status == 429 or response.status >= 500:
                         body=response.read().decode(errors="replace")
@@ -153,7 +174,7 @@ def enrich_changes(rows, history):
                 except (TypeError,ValueError): pass
     return rows
 
-def write_data(rows, data_dir=ROOT/"data", status="complete", error=None):
+def write_data(rows, data_dir=ROOT/"data", status="complete", error=None, update_latest=True):
     data_dir.mkdir(parents=True,exist_ok=True)
     csv_path=data_dir/"snapshots.csv"; history=read_history(csv_path)
     date=rows[0]["date"] if rows else datetime.now(timezone.utc).date().isoformat()
@@ -161,12 +182,14 @@ def write_data(rows, data_dir=ROOT/"data", status="complete", error=None):
     with csv_path.open("w",newline="") as f:
         writer=csv.DictWriter(f,fieldnames=FIELDS); writer.writeheader()
         for r in history+rows: writer.writerow({k:r.get(k) for k in FIELDS})
-    latest={"schema_version":1,"monitor":"sven28M","netuid":28,"role":config()["role"],
-            "favorites":config()["favorites"],"status":status,
-            "observed_at":rows[0]["observed_at"] if rows else datetime.now(timezone.utc).isoformat(),
-            "ranking":"miners only: emission, then incentive (descending)",
-            "top":rows,"error":error}
-    (data_dir/"latest.json").write_text(json.dumps(latest,indent=2)+"\n")
+    latest_path=data_dir/"latest.json"
+    if update_latest or not latest_path.exists():
+        latest={"schema_version":1,"monitor":"sven28M","netuid":28,"role":config()["role"],
+                "favorites":config()["favorites"],"status":status,
+                "observed_at":rows[0]["observed_at"] if rows else datetime.now(timezone.utc).isoformat(),
+                "ranking":"miners only: emission, then incentive (descending)",
+                "top":rows,"error":error}
+        latest_path.write_text(json.dumps(latest,indent=2)+"\n")
     stats={}
     for r in history+rows:
         s=stats.setdefault(str(r["uid"]),{"uid":int(r["uid"]),"coldkey":r["coldkey"],"hotkey":r["hotkey"],
@@ -187,7 +210,8 @@ def collect(api_key=None, data_dir=ROOT/"data", observed=None):
     rows=normalize(client.fetch(cfg["netuid"], observed if backfill else None),cfg["netuid"],cfg["top_n"],observed)
     if not rows:
         raise RuntimeError(f"TaoStats API returned zero eligible miners for netuid {cfg['netuid']}.")
-    write_data(enrich_changes(rows,previous),path)
+    prior=[row for row in previous if row.get("date","") < observed[:10]]
+    write_data(enrich_changes(rows,prior),path,update_latest=not backfill)
     return rows
 
 def main():
