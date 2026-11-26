@@ -1213,19 +1213,19 @@
         "tao_change": "0.0"
       },
       {
-        "uid": 154,
-        "coldkey": "5Ebgqrc5F6jLKfFYmyV4crHtdiTNpWXVQLybLoTZ4TLdm6XW",
-        "hotkey": "5CJHeoYzAwBkPFkykFNkryWgAEBN9PAtYEYStUXq477HD6H2",
-        "alpha_stake": 24.629199971,
-        "tao_balance": 0.0,
-        "incentive": 0.0216525521,
-        "emission": 3.196724214,
-        "rank": 6,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": -2,
-        "alpha_change": -15.769818473,
-        "tao_change": 0.0
+        "rank": "6",
+        "uid": "154",
+        "coldkey": "5Ebgqrc5F6jLKfFYmyV4crHtdiTNpWXVQLybLoTZ4TLdm6XW",
+        "hotkey": "5CJHeoYzAwBkPFkykFNkryWgAEBN9PAtYEYStUXq477HD6H2",
+        "alpha_stake": "24.629199971",
+        "tao_balance": "0.0",
+        "incentive": "0.0216525521",
+        "emission": "3.196724214",
+        "rank_change": "-2",
+        "alpha_change": "-15.769818473",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -1286,11 +1286,11 @@
   },
   "164": {
     "uid": 164,
-    "coldkey": "5Cm7d8599CMb8aZNwCWK413QWt4eEjBY9yyLVCUGkYwEELbo",
-    "hotkey": "5FHct37FbG8vtpe29rbR5ExVKnBuzGRkoMvSrUQ74EBMiPZJ",
-    "snapshots": 6,
+    "coldkey": "5Dd4pyoUbCMMv7Tfqm3yQ3yoUEN51yGd4g9NkhCkLceBdv3w",
+    "hotkey": "5HTudRZ8SvZnpBfbQnsMWNHe2GAMAw8PpBzT62a8oYjXd49v",
+    "snapshots": 7,
     "best_rank": 3,
-    "last_seen": "2026-11-19",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-12T20:45:05+00:00",
@@ -1381,6 +1381,21 @@
         "rank_change": "-10",
         "alpha_change": "-24.820439967000002",
         "tao_change": "0.0"
+      },
+      {
+        "uid": 164,
+        "coldkey": "5Dd4pyoUbCMMv7Tfqm3yQ3yoUEN51yGd4g9NkhCkLceBdv3w",
+        "hotkey": "5HTudRZ8SvZnpBfbQnsMWNHe2GAMAw8PpBzT62a8oYjXd49v",
+        "alpha_stake": 67.465554197,
+        "tao_balance": 0.0,
+        "incentive": 0.018112459,
+        "emission": 2.673606691,
+        "rank": 8,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": 5,
+        "alpha_change": 59.471505449000006,
+        "tao_change": 0.0
       }
     ]
   },
@@ -1458,9 +1473,9 @@
     "uid": 127,
     "coldkey": "5F4Eih76gumBMbH2Amuu7gRBB429wfKRP2LSaPiXAuR4YPWR",
     "hotkey": "5GWSrXMrBZLsT2kQNd7ySA1bNWssY4mLQKr9zapcYgBBoXPb",
-    "snapshots": 12,
+    "snapshots": 13,
     "best_rank": 11,
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-12T20:45:05+00:00",
@@ -1628,18 +1643,33 @@
         "tao_change": "0.0"
       },
       {
+        "observed_at": "2026-11-25T08:27:54+00:00",
+        "date": "2026-11-25",
+        "rank": "11",
+        "uid": "127",
+        "coldkey": "5F4Eih76gumBMbH2Amuu7gRBB429wfKRP2LSaPiXAuR4YPWR",
+        "hotkey": "5GWSrXMrBZLsT2kQNd7ySA1bNWssY4mLQKr9zapcYgBBoXPb",
+        "alpha_stake": "257.534835927",
+        "tao_balance": "0.0",
+        "incentive": "0.0150911727",
+        "emission": "2.229397548",
+        "rank_change": "3",
+        "alpha_change": "57.969454274000014",
+        "tao_change": "0.0"
+      },
+      {
         "uid": 127,
         "coldkey": "5F4Eih76gumBMbH2Amuu7gRBB429wfKRP2LSaPiXAuR4YPWR",
         "hotkey": "5GWSrXMrBZLsT2kQNd7ySA1bNWssY4mLQKr9zapcYgBBoXPb",
-        "alpha_stake": 257.534835927,
+        "alpha_stake": 285.674911179,
         "tao_balance": 0.0,
-        "incentive": 0.0150911727,
-        "emission": 2.229397548,
-        "rank": 11,
-        "observed_at": "2026-11-25T08:27:54+00:00",
-        "date": "2026-11-25",
-        "rank_change": 3,
-        "alpha_change": 57.969454274000014,
+        "incentive": 0.0065918975,
+        "emission": 0.974948081,
+        "rank": 22,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": -11,
+        "alpha_change": 28.140075251999974,
         "tao_change": 0.0
       }
     ]
@@ -1648,9 +1678,9 @@
     "uid": 211,
     "coldkey": "5GWbuJ94cKoJQjtFpdirtSCLXAhn1wS443NkSdvp59oXrzdm",
     "hotkey": "5H1bWhPngF3Pc3gj6tzU2tj7NzJcNpaGpTQTWQQt9wGhnGRp",
-    "snapshots": 8,
+    "snapshots": 9,
     "best_rank": 7,
-    "last_seen": "2026-11-24",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-12T20:45:05+00:00",
@@ -1771,6 +1801,21 @@
         "rank_change": "-13",
         "alpha_change": "-30.057407877",
         "tao_change": "0.0"
+      },
+      {
+        "uid": 211,
+        "coldkey": "5GWbuJ94cKoJQjtFpdirtSCLXAhn1wS443NkSdvp59oXrzdm",
+        "hotkey": "5H1bWhPngF3Pc3gj6tzU2tj7NzJcNpaGpTQTWQQt9wGhnGRp",
+        "alpha_stake": 4.139740497,
+        "tao_balance": 0.0,
+        "incentive": 0.0044708934,
+        "emission": 0.661444225,
+        "rank": 30,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": -10,
+        "alpha_change": 3.575854794,
+        "tao_change": 0.0
       }
     ]
   },
@@ -2198,19 +2243,19 @@
         "tao_change": "0.0"
       },
       {
-        "uid": 60,
-        "coldkey": "5CyMPPx3Db7xfsjG4KEGskhB9u9pe4tGuhMFUGSBgwKLSgh4",
-        "hotkey": "5HN7RRrLY1L6VXBHC1TThEUE4b5euSyURv3g2xckKPvL3myh",
-        "alpha_stake": 22.308433208,
-        "tao_balance": 0.0,
-        "incentive": 0.0058136873,
-        "emission": 0.8586262,
-        "rank": 23,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": -6,
-        "alpha_change": -13.572640378,
-        "tao_change": 0.0
+        "rank": "23",
+        "uid": "60",
+        "coldkey": "5CyMPPx3Db7xfsjG4KEGskhB9u9pe4tGuhMFUGSBgwKLSgh4",
+        "hotkey": "5HN7RRrLY1L6VXBHC1TThEUE4b5euSyURv3g2xckKPvL3myh",
+        "alpha_stake": "22.308433208",
+        "tao_balance": "0.0",
+        "incentive": "0.0058136873",
+        "emission": "0.8586262",
+        "rank_change": "-6",
+        "alpha_change": "-13.572640378",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -2268,19 +2313,19 @@
         "tao_change": "0.0"
       },
       {
-        "uid": 4,
-        "coldkey": "5Eho2AN8NZG7E1eiD36CLL5vXDsQjnJXJvp3qn2kgtinrBaF",
-        "hotkey": "5G6kHh1Y811VAg7MJdiURT51mXeMUb1yBjUGswoTRhz4YytK",
-        "alpha_stake": 26.78321739,
-        "tao_balance": 0.0,
-        "incentive": 0.0196841382,
-        "emission": 2.907241364,
-        "rank": 8,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": 11,
-        "alpha_change": 13.761141575,
-        "tao_change": 0.0
+        "rank": "8",
+        "uid": "4",
+        "coldkey": "5Eho2AN8NZG7E1eiD36CLL5vXDsQjnJXJvp3qn2kgtinrBaF",
+        "hotkey": "5G6kHh1Y811VAg7MJdiURT51mXeMUb1yBjUGswoTRhz4YytK",
+        "alpha_stake": "26.78321739",
+        "tao_balance": "0.0",
+        "incentive": "0.0196841382",
+        "emission": "2.907241364",
+        "rank_change": "11",
+        "alpha_change": "13.761141575",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -2428,9 +2473,9 @@
     "uid": 147,
     "coldkey": "5F4wazvvmGkjNgN5o2t4NjuMTCNJNrcKshvi8Kbu7AG2iouh",
     "hotkey": "5Eki9xAVL3uvFAr3VMxhj7eW5NP5LzS56rVTGJ4Lqm5YLXnU",
-    "snapshots": 3,
-    "best_rank": 15,
-    "last_seen": "2026-11-25",
+    "snapshots": 4,
+    "best_rank": 7,
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-12T20:45:05+00:00",
@@ -2463,18 +2508,33 @@
         "tao_change": "0.0"
       },
       {
+        "observed_at": "2026-11-25T08:27:54+00:00",
+        "date": "2026-11-25",
+        "rank": "15",
+        "uid": "147",
+        "coldkey": "5F4wazvvmGkjNgN5o2t4NjuMTCNJNrcKshvi8Kbu7AG2iouh",
+        "hotkey": "5Eki9xAVL3uvFAr3VMxhj7eW5NP5LzS56rVTGJ4Lqm5YLXnU",
+        "alpha_stake": "32.198027852",
+        "tao_balance": "0.0",
+        "incentive": "0.0105745022",
+        "emission": "1.562041409",
+        "rank_change": "7",
+        "alpha_change": "-68.25457068",
+        "tao_change": "0.0"
+      },
+      {
         "uid": 147,
         "coldkey": "5F4wazvvmGkjNgN5o2t4NjuMTCNJNrcKshvi8Kbu7AG2iouh",
         "hotkey": "5Eki9xAVL3uvFAr3VMxhj7eW5NP5LzS56rVTGJ4Lqm5YLXnU",
-        "alpha_stake": 32.198027852,
+        "alpha_stake": 56.607135329,
         "tao_balance": 0.0,
-        "incentive": 0.0105745022,
-        "emission": 1.562041409,
-        "rank": 15,
-        "observed_at": "2026-11-25T08:27:54+00:00",
-        "date": "2026-11-25",
-        "rank_change": 7,
-        "alpha_change": -68.25457068,
+        "incentive": 0.0189974823,
+        "emission": 2.805028785,
+        "rank": 7,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": 8,
+        "alpha_change": 24.409107477,
         "tao_change": 0.0
       }
     ]
@@ -2553,9 +2613,9 @@
     "uid": 232,
     "coldkey": "5CwAPGdKYBgdaZqZBKaTh9XoyTRrbPfPL696UhtjeEkB3NLi",
     "hotkey": "5HTABB8tAqmjUHkEdNdwMAU4NjMmHFD2bSYpBVgVGXWcHCf2",
-    "snapshots": 1,
+    "snapshots": 2,
     "best_rank": 24,
-    "last_seen": "2026-11-12",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-12T20:45:05+00:00",
@@ -2571,6 +2631,21 @@
         "rank_change": "0",
         "alpha_change": "0.0",
         "tao_change": "0.0"
+      },
+      {
+        "uid": 232,
+        "coldkey": "5CwAPGdKYBgdaZqZBKaTh9XoyTRrbPfPL696UhtjeEkB3NLi",
+        "hotkey": "5HTABB8tAqmjUHkEdNdwMAU4NjMmHFD2bSYpBVgVGXWcHCf2",
+        "alpha_stake": 3.402888677,
+        "tao_balance": 0.0,
+        "incentive": 0.0047455558,
+        "emission": 0.701729488,
+        "rank": 29,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": -5,
+        "alpha_change": 3.112289342,
+        "tao_change": 0.0
       }
     ]
   },
@@ -2728,19 +2803,19 @@
         "tao_change": "0.0"
       },
       {
-        "uid": 50,
-        "coldkey": "5GWGcD9E5RcxoUxpUm7KL5dorxZjp42dv4SbajefeELZyNe9",
-        "hotkey": "5G4hxCEMW4rmXwjsqppnkjaqocuZwFWJXc7ZChyRdagZYxaf",
-        "alpha_stake": 36.427146852,
-        "tao_balance": 0.0,
-        "incentive": 0.0288853285,
-        "emission": 4.264270163,
-        "rank": 5,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": 24,
-        "alpha_change": -439.43399247599996,
-        "tao_change": 0.0
+        "rank": "5",
+        "uid": "50",
+        "coldkey": "5GWGcD9E5RcxoUxpUm7KL5dorxZjp42dv4SbajefeELZyNe9",
+        "hotkey": "5G4hxCEMW4rmXwjsqppnkjaqocuZwFWJXc7ZChyRdagZYxaf",
+        "alpha_stake": "36.427146852",
+        "tao_balance": "0.0",
+        "incentive": "0.0288853285",
+        "emission": "4.264270163",
+        "rank_change": "24",
+        "alpha_change": "-439.43399247599996",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -3248,19 +3323,19 @@
         "tao_change": "0.0"
       },
       {
-        "uid": 88,
-        "coldkey": "5EkVEnuj99ieuhckR5DYssiT5Q8uAbeCD5aqgVBnSyQme23N",
-        "hotkey": "5FCjb3AhsMQm6StwCr3eNvFiPpVYfek3mDZEwpJAkwd2d6X3",
-        "alpha_stake": 28.618954233,
-        "tao_balance": 0.0,
-        "incentive": 0.0060273136,
-        "emission": 0.890068061,
-        "rank": 22,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": 8,
-        "alpha_change": 28.240852645,
-        "tao_change": 0.0
+        "rank": "22",
+        "uid": "88",
+        "coldkey": "5EkVEnuj99ieuhckR5DYssiT5Q8uAbeCD5aqgVBnSyQme23N",
+        "hotkey": "5FCjb3AhsMQm6StwCr3eNvFiPpVYfek3mDZEwpJAkwd2d6X3",
+        "alpha_stake": "28.618954233",
+        "tao_balance": "0.0",
+        "incentive": "0.0060273136",
+        "emission": "0.890068061",
+        "rank_change": "8",
+        "alpha_change": "28.240852645",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -3493,19 +3568,19 @@
         "tao_change": "0.0"
       },
       {
-        "uid": 68,
-        "coldkey": "5EkVEnuj99ieuhckR5DYssiT5Q8uAbeCD5aqgVBnSyQme23N",
-        "hotkey": "5CB3GykUm3pVgdCgqGAJaP8mzP2U4Ho56kXecLQLJnYRrPUs",
-        "alpha_stake": 0.0,
-        "tao_balance": 0.0,
-        "incentive": 0.0110170138,
-        "emission": 1.626926881,
-        "rank": 12,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": 11,
-        "alpha_change": -0.894692711,
-        "tao_change": 0.0
+        "rank": "12",
+        "uid": "68",
+        "coldkey": "5EkVEnuj99ieuhckR5DYssiT5Q8uAbeCD5aqgVBnSyQme23N",
+        "hotkey": "5CB3GykUm3pVgdCgqGAJaP8mzP2U4Ho56kXecLQLJnYRrPUs",
+        "alpha_stake": "0.0",
+        "tao_balance": "0.0",
+        "incentive": "0.0110170138",
+        "emission": "1.626926881",
+        "rank_change": "11",
+        "alpha_change": "-0.894692711",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -3513,9 +3588,9 @@
     "uid": 138,
     "coldkey": "5GJqZYDskw7DGFxNmwfVNq3j27H5WJZbwwJJo4F4VcBXfGtF",
     "hotkey": "5CfaJ817vpL7PzBwijLJd2PLe86a2synojuP1z81CJA52TXj",
-    "snapshots": 8,
+    "snapshots": 9,
     "best_rank": 1,
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-14T06:16:58+00:00",
@@ -3623,18 +3698,33 @@
         "tao_change": "0.0"
       },
       {
+        "observed_at": "2026-11-25T08:27:54+00:00",
+        "date": "2026-11-25",
+        "rank": "1",
+        "uid": "138",
+        "coldkey": "5GJqZYDskw7DGFxNmwfVNq3j27H5WJZbwwJJo4F4VcBXfGtF",
+        "hotkey": "5CfaJ817vpL7PzBwijLJd2PLe86a2synojuP1z81CJA52TXj",
+        "alpha_stake": "17559.241202834",
+        "tao_balance": "0.0",
+        "incentive": "0.2298008698",
+        "emission": "33.919798373",
+        "rank_change": "0",
+        "alpha_change": "-1537.6711178389996",
+        "tao_change": "0.0"
+      },
+      {
         "uid": 138,
         "coldkey": "5GJqZYDskw7DGFxNmwfVNq3j27H5WJZbwwJJo4F4VcBXfGtF",
         "hotkey": "5CfaJ817vpL7PzBwijLJd2PLe86a2synojuP1z81CJA52TXj",
-        "alpha_stake": 17559.241202834,
+        "alpha_stake": 17075.09184454,
         "tao_balance": 0.0,
-        "incentive": 0.2298008698,
-        "emission": 33.919798373,
+        "incentive": 0.2540169375,
+        "emission": 37.494395877,
         "rank": 1,
-        "observed_at": "2026-11-25T08:27:54+00:00",
-        "date": "2026-11-25",
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
         "rank_change": 0,
-        "alpha_change": -1537.6711178389996,
+        "alpha_change": -484.149358294002,
         "tao_change": 0.0
       }
     ]
@@ -3708,19 +3798,19 @@
         "tao_change": "0.0"
       },
       {
-        "uid": 215,
-        "coldkey": "5EPUwg4jP8C6UhHFt6HRZXpVKbeRiRM3yLUVLYe7FiCWhBKQ",
-        "hotkey": "5GZWTQH7W2HiixV3ULHFS6yiXrf4iTmnSF8YD3MCHDM4Pav5",
-        "alpha_stake": 5.358189259,
-        "tao_balance": 0.0,
-        "incentive": 0.0054627298,
-        "emission": 0.808456865,
-        "rank": 24,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": 0,
-        "alpha_change": -10.394043636,
-        "tao_change": 0.0
+        "rank": "24",
+        "uid": "215",
+        "coldkey": "5EPUwg4jP8C6UhHFt6HRZXpVKbeRiRM3yLUVLYe7FiCWhBKQ",
+        "hotkey": "5GZWTQH7W2HiixV3ULHFS6yiXrf4iTmnSF8YD3MCHDM4Pav5",
+        "alpha_stake": "5.358189259",
+        "tao_balance": "0.0",
+        "incentive": "0.0054627298",
+        "emission": "0.808456865",
+        "rank_change": "0",
+        "alpha_change": "-10.394043636",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -3728,9 +3818,9 @@
     "uid": 159,
     "coldkey": "5EPNf61NXRF7TTqCCL5MHM46wQD8YmwUPfnGKhRQLMogWnTo",
     "hotkey": "5E7G6zxsUzuynUKeNuMZ6DUNNRFKAHdGMVh2dkgthwNf2d5L",
-    "snapshots": 10,
+    "snapshots": 11,
     "best_rank": 13,
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-14T06:16:58+00:00",
@@ -3868,18 +3958,33 @@
         "tao_change": "0.0"
       },
       {
+        "observed_at": "2026-11-25T08:27:54+00:00",
+        "date": "2026-11-25",
+        "rank": "28",
+        "uid": "159",
+        "coldkey": "5EPNf61NXRF7TTqCCL5MHM46wQD8YmwUPfnGKhRQLMogWnTo",
+        "hotkey": "5E7G6zxsUzuynUKeNuMZ6DUNNRFKAHdGMVh2dkgthwNf2d5L",
+        "alpha_stake": "937.847745127",
+        "tao_balance": "0.0",
+        "incentive": "0.0046692607",
+        "emission": "0.689827513",
+        "rank_change": "-4",
+        "alpha_change": "21.181584174000022",
+        "tao_change": "0.0"
+      },
+      {
         "uid": 159,
         "coldkey": "5EPNf61NXRF7TTqCCL5MHM46wQD8YmwUPfnGKhRQLMogWnTo",
         "hotkey": "5E7G6zxsUzuynUKeNuMZ6DUNNRFKAHdGMVh2dkgthwNf2d5L",
-        "alpha_stake": 937.847745127,
+        "alpha_stake": 968.644624782,
         "tao_balance": 0.0,
-        "incentive": 0.0046692607,
-        "emission": 0.689827513,
-        "rank": 28,
-        "observed_at": "2026-11-25T08:27:54+00:00",
-        "date": "2026-11-25",
-        "rank_change": -4,
-        "alpha_change": 21.181584174000022,
+        "incentive": 0.0080262455,
+        "emission": 1.186077701,
+        "rank": 17,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": 11,
+        "alpha_change": 30.796879654999998,
         "tao_change": 0.0
       }
     ]
@@ -4233,19 +4338,19 @@
         "tao_change": "0.0"
       },
       {
-        "uid": 87,
-        "coldkey": "5F6eBJCf1BvSMjd3UzsYXV6u1aznHE4vBM6grzwK76DnB6ts",
-        "hotkey": "5ERC36TJpfwswUWrDHHCA9UQbJFcTrUQtTGWmKxp7RLaZgCf",
-        "alpha_stake": 0.0,
-        "tao_balance": 0.0,
-        "incentive": 0.0096894789,
-        "emission": 1.430779598,
-        "rank": 17,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": -12,
-        "alpha_change": 0.0,
-        "tao_change": 0.0
+        "rank": "17",
+        "uid": "87",
+        "coldkey": "5F6eBJCf1BvSMjd3UzsYXV6u1aznHE4vBM6grzwK76DnB6ts",
+        "hotkey": "5ERC36TJpfwswUWrDHHCA9UQbJFcTrUQtTGWmKxp7RLaZgCf",
+        "alpha_stake": "0.0",
+        "tao_balance": "0.0",
+        "incentive": "0.0096894789",
+        "emission": "1.430779598",
+        "rank_change": "-12",
+        "alpha_change": "0.0",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -4358,9 +4463,9 @@
     "uid": 243,
     "coldkey": "5CCyywiAgdCFXY5PU54niWcR9zBq8apU8HSJDAJMePvi4AEc",
     "hotkey": "5Cm3pZLVjuQ4PUb7j42N92VzoB6RsStHy5KbSyaFisYCP2Zb",
-    "snapshots": 1,
+    "snapshots": 2,
     "best_rank": 13,
-    "last_seen": "2026-11-15",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-15T06:24:36+00:00",
@@ -4376,6 +4481,21 @@
         "rank_change": "",
         "alpha_change": "",
         "tao_change": ""
+      },
+      {
+        "uid": 243,
+        "coldkey": "5CCyywiAgdCFXY5PU54niWcR9zBq8apU8HSJDAJMePvi4AEc",
+        "hotkey": "5Cm3pZLVjuQ4PUb7j42N92VzoB6RsStHy5KbSyaFisYCP2Zb",
+        "alpha_stake": 3.943569056,
+        "tao_balance": 0.0,
+        "incentive": 0.0058899825,
+        "emission": 0.870188157,
+        "rank": 24,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": -11,
+        "alpha_change": 1.0525060229999998,
+        "tao_change": 0.0
       }
     ]
   },
@@ -4383,9 +4503,9 @@
     "uid": 160,
     "coldkey": "5DxtJXcF4wAx7o8arUcPAW5kSUDH7WZEciCwpSrTa1cNwJ5Z",
     "hotkey": "5HYajiCqdLSsNX9Nco3Ws74RPj44kfwrWreVLCHNG1LuBFPJ",
-    "snapshots": 5,
+    "snapshots": 6,
     "best_rank": 11,
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-15T06:24:36+00:00",
@@ -4448,18 +4568,33 @@
         "tao_change": "0.0"
       },
       {
+        "observed_at": "2026-11-25T08:27:54+00:00",
+        "date": "2026-11-25",
+        "rank": "14",
+        "uid": "160",
+        "coldkey": "5DxtJXcF4wAx7o8arUcPAW5kSUDH7WZEciCwpSrTa1cNwJ5Z",
+        "hotkey": "5HYajiCqdLSsNX9Nco3Ws74RPj44kfwrWreVLCHNG1LuBFPJ",
+        "alpha_stake": "17.257836504",
+        "tao_balance": "0.0",
+        "incentive": "0.0106965743",
+        "emission": "1.579978465",
+        "rank_change": "-3",
+        "alpha_change": "-103.37521518300001",
+        "tao_change": "0.0"
+      },
+      {
         "uid": 160,
         "coldkey": "5DxtJXcF4wAx7o8arUcPAW5kSUDH7WZEciCwpSrTa1cNwJ5Z",
         "hotkey": "5HYajiCqdLSsNX9Nco3Ws74RPj44kfwrWreVLCHNG1LuBFPJ",
-        "alpha_stake": 17.257836504,
+        "alpha_stake": 17.999377735,
         "tao_balance": 0.0,
-        "incentive": 0.0106965743,
-        "emission": 1.579978465,
-        "rank": 14,
-        "observed_at": "2026-11-25T08:27:54+00:00",
-        "date": "2026-11-25",
-        "rank_change": -3,
-        "alpha_change": -103.37521518300001,
+        "incentive": 0.0049134051,
+        "emission": 0.726267701,
+        "rank": 27,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": -13,
+        "alpha_change": 0.7415412309999994,
         "tao_change": 0.0
       }
     ]
@@ -4563,9 +4698,9 @@
     "uid": 236,
     "coldkey": "5HBTF4PPr8UFG2GrhQf39oYhLVWyGL6imurc4DKXFqfU6RkE",
     "hotkey": "5HBwdsdJGpZfE9fdajYRzm3vcSebrir9hVEyjC6ZpN68hvMo",
-    "snapshots": 2,
-    "best_rank": 18,
-    "last_seen": "2026-11-25",
+    "snapshots": 3,
+    "best_rank": 11,
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-15T06:24:36+00:00",
@@ -4583,18 +4718,33 @@
         "tao_change": ""
       },
       {
+        "observed_at": "2026-11-25T08:27:54+00:00",
+        "date": "2026-11-25",
+        "rank": "20",
+        "uid": "236",
+        "coldkey": "5HBTF4PPr8UFG2GrhQf39oYhLVWyGL6imurc4DKXFqfU6RkE",
+        "hotkey": "5HBwdsdJGpZfE9fdajYRzm3vcSebrir9hVEyjC6ZpN68hvMo",
+        "alpha_stake": "20.08467013",
+        "tao_balance": "0.0",
+        "incentive": "0.0068513008",
+        "emission": "1.012673696",
+        "rank_change": "-2",
+        "alpha_change": "18.192319968",
+        "tao_change": "0.0"
+      },
+      {
         "uid": 236,
         "coldkey": "5HBTF4PPr8UFG2GrhQf39oYhLVWyGL6imurc4DKXFqfU6RkE",
         "hotkey": "5HBwdsdJGpZfE9fdajYRzm3vcSebrir9hVEyjC6ZpN68hvMo",
-        "alpha_stake": 20.08467013,
+        "alpha_stake": 42.634031225,
         "tao_balance": 0.0,
-        "incentive": 0.0068513008,
-        "emission": 1.012673696,
-        "rank": 20,
-        "observed_at": "2026-11-25T08:27:54+00:00",
-        "date": "2026-11-25",
-        "rank_change": -2,
-        "alpha_change": 18.192319968,
+        "incentive": 0.0108796826,
+        "emission": 1.606325704,
+        "rank": 11,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": 9,
+        "alpha_change": 22.549361095000002,
         "tao_change": 0.0
       }
     ]
@@ -4813,19 +4963,19 @@
         "tao_change": "0.0"
       },
       {
-        "uid": 158,
-        "coldkey": "5DJFC2MNe5dPQFPZEQMSs11UjjGJ5gcDGkyX9ywZbswwtMZh",
-        "hotkey": "5EyWPqouAJT8wgep8vkTbFG8mu1p2ZoXJnGBmkwmWVyUgyeN",
-        "alpha_stake": 29.845361068,
-        "tao_balance": 0.0,
-        "incentive": 0.0053559167,
-        "emission": 0.791353047,
-        "rank": 25,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": -14,
-        "alpha_change": 9.009084076,
-        "tao_change": 0.0
+        "rank": "25",
+        "uid": "158",
+        "coldkey": "5DJFC2MNe5dPQFPZEQMSs11UjjGJ5gcDGkyX9ywZbswwtMZh",
+        "hotkey": "5EyWPqouAJT8wgep8vkTbFG8mu1p2ZoXJnGBmkwmWVyUgyeN",
+        "alpha_stake": "29.845361068",
+        "tao_balance": "0.0",
+        "incentive": "0.0053559167",
+        "emission": "0.791353047",
+        "rank_change": "-14",
+        "alpha_change": "9.009084076",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -4833,9 +4983,9 @@
     "uid": 170,
     "coldkey": "5DLJTHeufJN3ngH5252NM4SVDpCah21YFxsUqKbho6LNCbER",
     "hotkey": "5FdszavyfVSDck2faeLJA5p82qK9eU8W3jfZXEA1xytRUBve",
-    "snapshots": 3,
+    "snapshots": 4,
     "best_rank": 6,
-    "last_seen": "2026-11-22",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-16T06:23:55+00:00",
@@ -4881,6 +5031,21 @@
         "rank_change": "12",
         "alpha_change": "33.980772478999995",
         "tao_change": "0.0"
+      },
+      {
+        "uid": 170,
+        "coldkey": "5DLJTHeufJN3ngH5252NM4SVDpCah21YFxsUqKbho6LNCbER",
+        "hotkey": "5FdszavyfVSDck2faeLJA5p82qK9eU8W3jfZXEA1xytRUBve",
+        "alpha_stake": 1.239340949,
+        "tao_balance": 0.0,
+        "incentive": 0.008377203,
+        "emission": 1.238120464,
+        "rank": 16,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": -10,
+        "alpha_change": -33.940481428999995,
+        "tao_change": 0.0
       }
     ]
   },
@@ -4888,9 +5053,9 @@
     "uid": 218,
     "coldkey": "5FL5rSZoieUvaRkpC8ZXea8WEJGYzVKdgMuKh8z1rJXufuoi",
     "hotkey": "5Fc4BPueW2WeR2aCcBaqaYuVFTLa314fTAskKksc9ZhENakV",
-    "snapshots": 3,
+    "snapshots": 4,
     "best_rank": 3,
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-16T06:23:55+00:00",
@@ -4923,29 +5088,44 @@
         "tao_change": "0.0"
       },
       {
+        "observed_at": "2026-11-25T08:27:54+00:00",
+        "date": "2026-11-25",
+        "rank": "3",
+        "uid": "218",
+        "coldkey": "5FL5rSZoieUvaRkpC8ZXea8WEJGYzVKdgMuKh8z1rJXufuoi",
+        "hotkey": "5Fc4BPueW2WeR2aCcBaqaYuVFTLa314fTAskKksc9ZhENakV",
+        "alpha_stake": "38.416755704",
+        "tao_balance": "0.0",
+        "incentive": "0.1631342031",
+        "emission": "24.080444225",
+        "rank_change": "17",
+        "alpha_change": "36.553321905000004",
+        "tao_change": "0.0"
+      },
+      {
         "uid": 218,
         "coldkey": "5FL5rSZoieUvaRkpC8ZXea8WEJGYzVKdgMuKh8z1rJXufuoi",
         "hotkey": "5Fc4BPueW2WeR2aCcBaqaYuVFTLa314fTAskKksc9ZhENakV",
-        "alpha_stake": 38.416755704,
+        "alpha_stake": 6.252562792,
         "tao_balance": 0.0,
-        "incentive": 0.1631342031,
-        "emission": 24.080444225,
-        "rank": 3,
-        "observed_at": "2026-11-25T08:27:54+00:00",
-        "date": "2026-11-25",
-        "rank_change": 17,
-        "alpha_change": 36.553321905000004,
+        "incentive": 0.0079804685,
+        "emission": 1.178926825,
+        "rank": 18,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": -15,
+        "alpha_change": -32.164192912000004,
         "tao_change": 0.0
       }
     ]
   },
   "140": {
     "uid": 140,
-    "coldkey": "5F9MSTPpWAEaUu5U4GpTHtJy9f9wfFjtpHCRfH7AuGUpnh7D",
-    "hotkey": "5CLeWBic99JdWxrzmSemB9DDgvscPptv7WBf7uXT3BTa8M74",
-    "snapshots": 1,
-    "best_rank": 17,
-    "last_seen": "2026-11-16",
+    "coldkey": "5D4umxP1NKbWGBcF3XEmKqweTM8CNFY4guEJeoPXKfdf2hEY",
+    "hotkey": "5Gsb5whmT9ETfceFiRwSPCkdCBFzV7gSUwxbcHL9EXWviHUZ",
+    "snapshots": 2,
+    "best_rank": 2,
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-16T06:23:55+00:00",
@@ -4961,6 +5141,21 @@
         "rank_change": "",
         "alpha_change": "",
         "tao_change": ""
+      },
+      {
+        "uid": 140,
+        "coldkey": "5D4umxP1NKbWGBcF3XEmKqweTM8CNFY4guEJeoPXKfdf2hEY",
+        "hotkey": "5Gsb5whmT9ETfceFiRwSPCkdCBFzV7gSUwxbcHL9EXWviHUZ",
+        "alpha_stake": 0.0,
+        "tao_balance": 0.0,
+        "incentive": 0.2001983673,
+        "emission": 29.550775297,
+        "rank": 2,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": 15,
+        "alpha_change": -3.309994587,
+        "tao_change": 0.0
       }
     ]
   },
@@ -5058,9 +5253,9 @@
     "uid": 157,
     "coldkey": "5HBXSHKZvj6MLFF98bw4y7AN3eCXCrU447XYpRNKimpArGJK",
     "hotkey": "5FBntQs4VVZahRJDHh98YpfxNKJp9AYdyyGBjEeWx7dCxyDT",
-    "snapshots": 2,
-    "best_rank": 8,
-    "last_seen": "2026-11-24",
+    "snapshots": 3,
+    "best_rank": 6,
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-17T07:51:53+00:00",
@@ -5091,6 +5286,21 @@
         "rank_change": "-6",
         "alpha_change": "1.074586224",
         "tao_change": "0.0"
+      },
+      {
+        "uid": 157,
+        "coldkey": "5HBXSHKZvj6MLFF98bw4y7AN3eCXCrU447XYpRNKimpArGJK",
+        "hotkey": "5FBntQs4VVZahRJDHh98YpfxNKJp9AYdyyGBjEeWx7dCxyDT",
+        "alpha_stake": 10.560919587,
+        "tao_balance": 0.0,
+        "incentive": 0.0217288472,
+        "emission": 3.209204637,
+        "rank": 6,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": 8,
+        "alpha_change": 1.933861738000001,
+        "tao_change": 0.0
       }
     ]
   },
@@ -5098,9 +5308,9 @@
     "uid": 171,
     "coldkey": "5DVBBsW4stBbT2p98ftvJ8ZGMCFztNqXEF21oW7MEXobXwqc",
     "hotkey": "5GnGvixNRdoF6XwnKFyL1eCbvYzqyfe7DDWt6C4mHmnkDAsR",
-    "snapshots": 3,
+    "snapshots": 4,
     "best_rank": 10,
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-17T07:51:53+00:00",
@@ -5133,18 +5343,33 @@
         "tao_change": "0.0"
       },
       {
+        "observed_at": "2026-11-25T08:27:54+00:00",
+        "date": "2026-11-25",
+        "rank": "16",
+        "uid": "171",
+        "coldkey": "5DVBBsW4stBbT2p98ftvJ8ZGMCFztNqXEF21oW7MEXobXwqc",
+        "hotkey": "5GnGvixNRdoF6XwnKFyL1eCbvYzqyfe7DDWt6C4mHmnkDAsR",
+        "alpha_stake": "35.326278125",
+        "tao_balance": "0.0",
+        "incentive": "0.0101167315",
+        "emission": "1.493581323",
+        "rank_change": "5",
+        "alpha_change": "17.289800902000003",
+        "tao_change": "0.0"
+      },
+      {
         "uid": 171,
         "coldkey": "5DVBBsW4stBbT2p98ftvJ8ZGMCFztNqXEF21oW7MEXobXwqc",
         "hotkey": "5GnGvixNRdoF6XwnKFyL1eCbvYzqyfe7DDWt6C4mHmnkDAsR",
-        "alpha_stake": 35.326278125,
+        "alpha_stake": 52.944187432,
         "tao_balance": 0.0,
-        "incentive": 0.0101167315,
-        "emission": 1.493581323,
-        "rank": 16,
-        "observed_at": "2026-11-25T08:27:54+00:00",
-        "date": "2026-11-25",
-        "rank_change": 5,
-        "alpha_change": 17.289800902000003,
+        "incentive": 0.0054322118,
+        "emission": 0.802352158,
+        "rank": 26,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": -10,
+        "alpha_change": 17.617909306999998,
         "tao_change": 0.0
       }
     ]
@@ -5428,9 +5653,9 @@
     "uid": 145,
     "coldkey": "5FNXs6tfx3DgnhWbKRQLsVeoJQk56aV7HUWpgeS1fAJVg8ns",
     "hotkey": "5GE54vJG5WFzDUCWp7JQhEJfmz4vdHru6QiT6MBowumMZCDq",
-    "snapshots": 3,
+    "snapshots": 4,
     "best_rank": 6,
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-17T07:51:53+00:00",
@@ -5463,18 +5688,33 @@
         "tao_change": "0.0"
       },
       {
+        "observed_at": "2026-11-25T08:27:54+00:00",
+        "date": "2026-11-25",
+        "rank": "27",
+        "uid": "145",
+        "coldkey": "5FNXs6tfx3DgnhWbKRQLsVeoJQk56aV7HUWpgeS1fAJVg8ns",
+        "hotkey": "5GE54vJG5WFzDUCWp7JQhEJfmz4vdHru6QiT6MBowumMZCDq",
+        "alpha_stake": "3.686837748",
+        "tao_balance": "0.0",
+        "incentive": "0.004867628",
+        "emission": "0.719615545",
+        "rank_change": "-21",
+        "alpha_change": "-23.706852748000003",
+        "tao_change": "0.0"
+      },
+      {
         "uid": 145,
         "coldkey": "5FNXs6tfx3DgnhWbKRQLsVeoJQk56aV7HUWpgeS1fAJVg8ns",
         "hotkey": "5GE54vJG5WFzDUCWp7JQhEJfmz4vdHru6QiT6MBowumMZCDq",
-        "alpha_stake": 3.686837748,
+        "alpha_stake": 8.983379851,
         "tao_balance": 0.0,
-        "incentive": 0.004867628,
-        "emission": 0.719615545,
-        "rank": 27,
-        "observed_at": "2026-11-25T08:27:54+00:00",
-        "date": "2026-11-25",
-        "rank_change": -21,
-        "alpha_change": -23.706852748000003,
+        "incentive": 0.0095826658,
+        "emission": 1.416385057,
+        "rank": 14,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": 13,
+        "alpha_change": 5.296542103,
         "tao_change": 0.0
       }
     ]
@@ -5508,9 +5748,9 @@
     "uid": 108,
     "coldkey": "5C4k2BsB34bs75RK8PAVe3KT3StoqNRbA7vARsx1RdJwmL3V",
     "hotkey": "5FuoYE5zgM7V6DS3UwARbGUJ2v8kmDGHDLMf7GtE68L3zQQy",
-    "snapshots": 7,
+    "snapshots": 8,
     "best_rank": 4,
-    "last_seen": "2026-11-24",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-18T07:23:47+00:00",
@@ -5616,6 +5856,21 @@
         "rank_change": "-2",
         "alpha_change": "-12.816346719999999",
         "tao_change": "0.0"
+      },
+      {
+        "uid": 108,
+        "coldkey": "5C4k2BsB34bs75RK8PAVe3KT3StoqNRbA7vARsx1RdJwmL3V",
+        "hotkey": "5FuoYE5zgM7V6DS3UwARbGUJ2v8kmDGHDLMf7GtE68L3zQQy",
+        "alpha_stake": 79.483540425,
+        "tao_balance": 0.0,
+        "incentive": 0.02371252,
+        "emission": 3.501869229,
+        "rank": 5,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": 3,
+        "alpha_change": 18.947156397,
+        "tao_change": 0.0
       }
     ]
   },
@@ -5821,11 +6076,11 @@
   },
   "238": {
     "uid": 238,
-    "coldkey": "5CXyPy6FPby4tRQF7FhGHieji9bedd8NsHFefkGDqKikGSd9",
-    "hotkey": "5HQnFcSCUegfqZvjN5TtsG3zkZ8WLioQ91BUSouoqAs6RPEJ",
-    "snapshots": 1,
-    "best_rank": 27,
-    "last_seen": "2026-11-18",
+    "coldkey": "5D5guu4uwkAk1LKQkcX6odrd36DjeKw3aLuPM488ztpFuuUo",
+    "hotkey": "5ER75HnrFfKxoYn9FyC4f9aZZfy1WVrAfpc4W4aDDYrmbWnZ",
+    "snapshots": 2,
+    "best_rank": 12,
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-18T07:23:47+00:00",
@@ -5841,6 +6096,21 @@
         "rank_change": "",
         "alpha_change": "",
         "tao_change": ""
+      },
+      {
+        "uid": 238,
+        "coldkey": "5D5guu4uwkAk1LKQkcX6odrd36DjeKw3aLuPM488ztpFuuUo",
+        "hotkey": "5ER75HnrFfKxoYn9FyC4f9aZZfy1WVrAfpc4W4aDDYrmbWnZ",
+        "alpha_stake": 10.659930976,
+        "tao_balance": 0.0,
+        "incentive": 0.010421912,
+        "emission": 1.53960495,
+        "rank": 12,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": 15,
+        "alpha_change": 6.512904526,
+        "tao_change": 0.0
       }
     ]
   },
@@ -6008,9 +6278,9 @@
     "uid": 185,
     "coldkey": "5FL5rSZoieUvaRkpC8ZXea8WEJGYzVKdgMuKh8z1rJXufuoi",
     "hotkey": "5G9auNzJtqDxFHNx6GbzybofJz54onXSnymSPK1eRTe4dxsi",
-    "snapshots": 2,
+    "snapshots": 3,
     "best_rank": 2,
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-19T07:21:15+00:00",
@@ -6028,18 +6298,33 @@
         "tao_change": ""
       },
       {
+        "observed_at": "2026-11-25T08:27:54+00:00",
+        "date": "2026-11-25",
+        "rank": "2",
+        "uid": "185",
+        "coldkey": "5FL5rSZoieUvaRkpC8ZXea8WEJGYzVKdgMuKh8z1rJXufuoi",
+        "hotkey": "5G9auNzJtqDxFHNx6GbzybofJz54onXSnymSPK1eRTe4dxsi",
+        "alpha_stake": "50.923001306",
+        "tao_balance": "0.0",
+        "incentive": "0.2081330587",
+        "emission": "30.721394692",
+        "rank_change": "21",
+        "alpha_change": "46.01791999",
+        "tao_change": "0.0"
+      },
+      {
         "uid": 185,
         "coldkey": "5FL5rSZoieUvaRkpC8ZXea8WEJGYzVKdgMuKh8z1rJXufuoi",
         "hotkey": "5G9auNzJtqDxFHNx6GbzybofJz54onXSnymSPK1eRTe4dxsi",
-        "alpha_stake": 50.923001306,
+        "alpha_stake": 8.193450165,
         "tao_balance": 0.0,
-        "incentive": 0.2081330587,
-        "emission": 30.721394692,
-        "rank": 2,
-        "observed_at": "2026-11-25T08:27:54+00:00",
-        "date": "2026-11-25",
-        "rank_change": 21,
-        "alpha_change": 46.01791999,
+        "incentive": 0.0084077211,
+        "emission": 1.242458483,
+        "rank": 15,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": -13,
+        "alpha_change": -42.729551141,
         "tao_change": 0.0
       }
     ]
@@ -6153,9 +6438,9 @@
     "uid": 182,
     "coldkey": "5Eno7zFA4Do7ZtJkYPm1reqN2JV4EGaT5V7fJZFK6nx3sHvQ",
     "hotkey": "5EqAaw5G3VJqrxdSkrmxHmgTjrThRL8k3ne6camuCYKv2gU3",
-    "snapshots": 4,
+    "snapshots": 5,
     "best_rank": 9,
-    "last_seen": "2026-11-24",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-20T07:10:47+00:00",
@@ -6216,6 +6501,21 @@
         "rank_change": "-4",
         "alpha_change": "10.189556785999997",
         "tao_change": "0.0"
+      },
+      {
+        "uid": 182,
+        "coldkey": "5Eno7zFA4Do7ZtJkYPm1reqN2JV4EGaT5V7fJZFK6nx3sHvQ",
+        "hotkey": "5EqAaw5G3VJqrxdSkrmxHmgTjrThRL8k3ne6camuCYKv2gU3",
+        "alpha_stake": 31.387729509,
+        "tao_balance": 0.0,
+        "incentive": 0.0141451133,
+        "emission": 2.089775659,
+        "rank": 10,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": 3,
+        "alpha_change": -7.468911666999997,
+        "tao_change": 0.0
       }
     ]
   },
@@ -6223,9 +6523,9 @@
     "uid": 189,
     "coldkey": "5C8YhWDZfkxNCHKhjTTo8fmfcjAhbQTGP8VtEv5fBKLt9cVo",
     "hotkey": "5G9C15F6xcVbNfG6fpAaK6JkUzPXKZswaeCMLpeyBk9tuCMU",
-    "snapshots": 6,
+    "snapshots": 7,
     "best_rank": 4,
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-20T07:10:47+00:00",
@@ -6303,18 +6603,33 @@
         "tao_change": "0.0"
       },
       {
+        "observed_at": "2026-11-25T08:27:54+00:00",
+        "date": "2026-11-25",
+        "rank": "7",
+        "uid": "189",
+        "coldkey": "5C8YhWDZfkxNCHKhjTTo8fmfcjAhbQTGP8VtEv5fBKLt9cVo",
+        "hotkey": "5G9C15F6xcVbNfG6fpAaK6JkUzPXKZswaeCMLpeyBk9tuCMU",
+        "alpha_stake": "17.655172867",
+        "tao_balance": "0.0",
+        "incentive": "0.0196993973",
+        "emission": "2.909818538",
+        "rank_change": "0",
+        "alpha_change": "-22.257029960999997",
+        "tao_change": "0.0"
+      },
+      {
         "uid": 189,
         "coldkey": "5C8YhWDZfkxNCHKhjTTo8fmfcjAhbQTGP8VtEv5fBKLt9cVo",
         "hotkey": "5G9C15F6xcVbNfG6fpAaK6JkUzPXKZswaeCMLpeyBk9tuCMU",
-        "alpha_stake": 17.655172867,
+        "alpha_stake": 50.302986755,
         "tao_balance": 0.0,
-        "incentive": 0.0196993973,
-        "emission": 2.909818538,
-        "rank": 7,
-        "observed_at": "2026-11-25T08:27:54+00:00",
-        "date": "2026-11-25",
-        "rank_change": 0,
-        "alpha_change": -22.257029960999997,
+        "incentive": 0.0143892576,
+        "emission": 2.125676783,
+        "rank": 9,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": -2,
+        "alpha_change": 32.647813888,
         "tao_change": 0.0
       }
     ]
@@ -6323,9 +6638,9 @@
     "uid": 188,
     "coldkey": "5EcdMpEAjig1f1Jpe9zRRjfE6JYonfTmeut5DjrDmErC3kLg",
     "hotkey": "5CLTEgQ5sgGTqTVAENqxFXL3Mkgap6TvBh6xQmv9NiiQq7qs",
-    "snapshots": 5,
+    "snapshots": 6,
     "best_rank": 7,
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-20T07:10:47+00:00",
@@ -6388,18 +6703,33 @@
         "tao_change": "0.0"
       },
       {
+        "observed_at": "2026-11-25T08:27:54+00:00",
+        "date": "2026-11-25",
+        "rank": "26",
+        "uid": "188",
+        "coldkey": "5EcdMpEAjig1f1Jpe9zRRjfE6JYonfTmeut5DjrDmErC3kLg",
+        "hotkey": "5CLTEgQ5sgGTqTVAENqxFXL3Mkgap6TvBh6xQmv9NiiQq7qs",
+        "alpha_stake": "15.320687071",
+        "tao_balance": "0.0",
+        "incentive": "0.0053101396",
+        "emission": "0.785462646",
+        "rank_change": "-2",
+        "alpha_change": "-3.4772603700000015",
+        "tao_change": "0.0"
+      },
+      {
         "uid": 188,
         "coldkey": "5EcdMpEAjig1f1Jpe9zRRjfE6JYonfTmeut5DjrDmErC3kLg",
         "hotkey": "5CLTEgQ5sgGTqTVAENqxFXL3Mkgap6TvBh6xQmv9NiiQq7qs",
-        "alpha_stake": 15.320687071,
+        "alpha_stake": 44.473826798,
         "tao_balance": 0.0,
-        "incentive": 0.0053101396,
-        "emission": 0.785462646,
-        "rank": 26,
-        "observed_at": "2026-11-25T08:27:54+00:00",
-        "date": "2026-11-25",
-        "rank_change": -2,
-        "alpha_change": -3.4772603700000015,
+        "incentive": 0.006958114,
+        "emission": 1.027586063,
+        "rank": 21,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": 5,
+        "alpha_change": 29.153139726999996,
         "tao_change": 0.0
       }
     ]
@@ -6603,19 +6933,19 @@
         "tao_change": "0.0"
       },
       {
-        "uid": 162,
-        "coldkey": "5HBXSHKZvj6MLFF98bw4y7AN3eCXCrU447XYpRNKimpArGJK",
-        "hotkey": "5GjJKu7TCsNqevYSg996Unsk45ePqVHfKwy9o1uzRo5Y4Yzw",
-        "alpha_stake": 36.470643791,
-        "tao_balance": 0.0,
-        "incentive": 0.0350804913,
-        "emission": 5.178670379,
-        "rank": 4,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": 5,
-        "alpha_change": 21.127081357,
-        "tao_change": 0.0
+        "rank": "4",
+        "uid": "162",
+        "coldkey": "5HBXSHKZvj6MLFF98bw4y7AN3eCXCrU447XYpRNKimpArGJK",
+        "hotkey": "5GjJKu7TCsNqevYSg996Unsk45ePqVHfKwy9o1uzRo5Y4Yzw",
+        "alpha_stake": "36.470643791",
+        "tao_balance": "0.0",
+        "incentive": "0.0350804913",
+        "emission": "5.178670379",
+        "rank_change": "5",
+        "alpha_change": "21.127081357",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -6868,19 +7198,19 @@
         "tao_change": "0.0"
       },
       {
-        "uid": 139,
-        "coldkey": "5EqW8QE5oz2AqRRKjC4D8i2rSY17BHiXZssGiNsJDnzsacey",
-        "hotkey": "5Dz2XDf3EzkiSjhbb56PVN8wSvKkQMNxCkcy2B5WaAPgrcg7",
-        "alpha_stake": 1.073842568,
-        "tao_balance": 0.0,
-        "incentive": 0.0072632944,
-        "emission": 1.073842554,
-        "rank": 18,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": 10,
-        "alpha_change": 0.6584751830000002,
-        "tao_change": 0.0
+        "rank": "18",
+        "uid": "139",
+        "coldkey": "5EqW8QE5oz2AqRRKjC4D8i2rSY17BHiXZssGiNsJDnzsacey",
+        "hotkey": "5Dz2XDf3EzkiSjhbb56PVN8wSvKkQMNxCkcy2B5WaAPgrcg7",
+        "alpha_stake": "1.073842568",
+        "tao_balance": "0.0",
+        "incentive": "0.0072632944",
+        "emission": "1.073842554",
+        "rank_change": "10",
+        "alpha_change": "0.6584751830000002",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -6888,9 +7218,9 @@
     "uid": 64,
     "coldkey": "5CkE5aMh4LeNnQNQgczgjXsp3sBoeJQZPVTWVHAuiaqnt99V",
     "hotkey": "5GpRLc8LsZbvu8LtWDEfaN1sT3GAJ8rXJLRH4VQMpinP4sy6",
-    "snapshots": 1,
+    "snapshots": 2,
     "best_rank": 16,
-    "last_seen": "2026-11-21",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-21T07:02:09+00:00",
@@ -6906,6 +7236,21 @@
         "rank_change": "",
         "alpha_change": "",
         "tao_change": ""
+      },
+      {
+        "uid": 64,
+        "coldkey": "5CkE5aMh4LeNnQNQgczgjXsp3sBoeJQZPVTWVHAuiaqnt99V",
+        "hotkey": "5GpRLc8LsZbvu8LtWDEfaN1sT3GAJ8rXJLRH4VQMpinP4sy6",
+        "alpha_stake": 0.0,
+        "tao_balance": 0.0,
+        "incentive": 0.0048371099,
+        "emission": 0.715504684,
+        "rank": 28,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": -12,
+        "alpha_change": 0.0,
+        "tao_change": 0.0
       }
     ]
   },
@@ -6993,9 +7338,9 @@
     "uid": 39,
     "coldkey": "5GgDGYcpNbFfoiME7z6jBcTyPahhEpwNqhn843CVhPUWPetw",
     "hotkey": "5HCEv8BqksHpro1Nko5fMyCC4kDgU68cR2NYahYyCVcRakf9",
-    "snapshots": 1,
+    "snapshots": 2,
     "best_rank": 23,
-    "last_seen": "2026-11-21",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-21T07:02:09+00:00",
@@ -7011,6 +7356,21 @@
         "rank_change": "",
         "alpha_change": "",
         "tao_change": ""
+      },
+      {
+        "uid": 39,
+        "coldkey": "5GgDGYcpNbFfoiME7z6jBcTyPahhEpwNqhn843CVhPUWPetw",
+        "hotkey": "5HCEv8BqksHpro1Nko5fMyCC4kDgU68cR2NYahYyCVcRakf9",
+        "alpha_stake": 0.806818546,
+        "tao_balance": 0.0,
+        "incentive": 0.0054627298,
+        "emission": 0.8068185,
+        "rank": 25,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": -2,
+        "alpha_change": 0.806818546,
+        "tao_change": 0.0
       }
     ]
   },
@@ -7038,19 +7398,19 @@
         "tao_change": ""
       },
       {
-        "uid": 193,
-        "coldkey": "5DRbW8yhYgVA1uZBM6ysAghzpBtmZAcKy68uDEZtkyA64UYY",
-        "hotkey": "5GZAsvFx86JHBtTsxUmSP3akP33kZcm97Nqu9BVd5gSrxdQF",
-        "alpha_stake": 2.200992569,
-        "tao_balance": 0.0,
-        "incentive": 0.0044403754,
-        "emission": 0.65585872,
-        "rank": 30,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": -6,
-        "alpha_change": 2.200992569,
-        "tao_change": 0.0
+        "rank": "30",
+        "uid": "193",
+        "coldkey": "5DRbW8yhYgVA1uZBM6ysAghzpBtmZAcKy68uDEZtkyA64UYY",
+        "hotkey": "5GZAsvFx86JHBtTsxUmSP3akP33kZcm97Nqu9BVd5gSrxdQF",
+        "alpha_stake": "2.200992569",
+        "tao_balance": "0.0",
+        "incentive": "0.0044403754",
+        "emission": "0.65585872",
+        "rank_change": "-6",
+        "alpha_change": "2.200992569",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -7228,19 +7588,19 @@
         "tao_change": "0.0"
       },
       {
-        "uid": 178,
-        "coldkey": "5ELgHZkYnVNtwVFvz3bqH6PCYN7XStbo1WoQve58F6Vn79c4",
-        "hotkey": "5HTXLZzzSVzuhm5FShKt5X8XZhPJQsRvEgCnwxBAhMmQJrLs",
-        "alpha_stake": 32.765461835,
-        "tao_balance": 0.0,
-        "incentive": 0.0046082246,
-        "emission": 0.680943422,
-        "rank": 29,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": -2,
-        "alpha_change": 15.238474299000003,
-        "tao_change": 0.0
+        "rank": "29",
+        "uid": "178",
+        "coldkey": "5ELgHZkYnVNtwVFvz3bqH6PCYN7XStbo1WoQve58F6Vn79c4",
+        "hotkey": "5HTXLZzzSVzuhm5FShKt5X8XZhPJQsRvEgCnwxBAhMmQJrLs",
+        "alpha_stake": "32.765461835",
+        "tao_balance": "0.0",
+        "incentive": "0.0046082246",
+        "emission": "0.680943422",
+        "rank_change": "-2",
+        "alpha_change": "15.238474299000003",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -7463,9 +7823,9 @@
     "uid": 224,
     "coldkey": "5D1xgNfJzGDVe5ChyC4a2Zg8QSqoLKYUWTL9A63PVrS3fd5x",
     "hotkey": "5DLa3U5v1tALbuMTRbVFSf8MMuW22JgJ9vuR79GDNTDQS368",
-    "snapshots": 2,
+    "snapshots": 3,
     "best_rank": 6,
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "history": [
       {
         "observed_at": "2026-11-24T09:51:10+00:00",
@@ -7483,18 +7843,33 @@
         "tao_change": ""
       },
       {
+        "observed_at": "2026-11-25T08:27:54+00:00",
+        "date": "2026-11-25",
+        "rank": "21",
+        "uid": "224",
+        "coldkey": "5D1xgNfJzGDVe5ChyC4a2Zg8QSqoLKYUWTL9A63PVrS3fd5x",
+        "hotkey": "5DLa3U5v1tALbuMTRbVFSf8MMuW22JgJ9vuR79GDNTDQS368",
+        "alpha_stake": "25.491054682",
+        "tao_balance": "0.0",
+        "incentive": "0.0065613794",
+        "emission": "0.969939375",
+        "rank_change": "-15",
+        "alpha_change": "1.3055021550000028",
+        "tao_change": "0.0"
+      },
+      {
         "uid": 224,
         "coldkey": "5D1xgNfJzGDVe5ChyC4a2Zg8QSqoLKYUWTL9A63PVrS3fd5x",
         "hotkey": "5DLa3U5v1tALbuMTRbVFSf8MMuW22JgJ9vuR79GDNTDQS368",
-        "alpha_stake": 25.491054682,
+        "alpha_stake": 56.435054595,
         "tao_balance": 0.0,
-        "incentive": 0.0065613794,
-        "emission": 0.969939375,
-        "rank": 21,
-        "observed_at": "2026-11-25T08:27:54+00:00",
-        "date": "2026-11-25",
-        "rank_change": -15,
-        "alpha_change": 1.3055021550000028,
+        "incentive": 0.0078126192,
+        "emission": 1.155184184,
+        "rank": 19,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": 2,
+        "alpha_change": 30.943999912999995,
         "tao_change": 0.0
       }
     ]
@@ -7523,19 +7898,19 @@
         "tao_change": ""
       },
       {
-        "uid": 226,
-        "coldkey": "5D4VrPJJF7yxWvYMsyCS4byv4H7dwhrzMhwKf5Ff8XeR1AMo",
-        "hotkey": "5Gxdgu8F6AUEi5LuRModWHuABYuHbEUFG7iBNGHKDfYtMkgU",
-        "alpha_stake": 35.170775169,
-        "tao_balance": 0.0,
-        "incentive": 0.0180361639,
-        "emission": 2.664052945,
-        "rank": 9,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": 1,
-        "alpha_change": 6.691797943000001,
-        "tao_change": 0.0
+        "rank": "9",
+        "uid": "226",
+        "coldkey": "5D4VrPJJF7yxWvYMsyCS4byv4H7dwhrzMhwKf5Ff8XeR1AMo",
+        "hotkey": "5Gxdgu8F6AUEi5LuRModWHuABYuHbEUFG7iBNGHKDfYtMkgU",
+        "alpha_stake": "35.170775169",
+        "tao_balance": "0.0",
+        "incentive": "0.0180361639",
+        "emission": "2.664052945",
+        "rank_change": "1",
+        "alpha_change": "6.691797943000001",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -7563,19 +7938,19 @@
         "tao_change": ""
       },
       {
-        "uid": 81,
-        "coldkey": "5F6eBJCf1BvSMjd3UzsYXV6u1aznHE4vBM6grzwK76DnB6ts",
-        "hotkey": "5EtRJiepH5zkFjMi6MLW3YgWE6WLp7S89WXzYuAVR5QncBVN",
-        "alpha_stake": 0.0,
-        "tao_balance": 0.0,
-        "incentive": 0.0071564813,
-        "emission": 1.058383905,
-        "rank": 19,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
-        "rank_change": -4,
-        "alpha_change": 0.0,
-        "tao_change": 0.0
+        "rank": "19",
+        "uid": "81",
+        "coldkey": "5F6eBJCf1BvSMjd3UzsYXV6u1aznHE4vBM6grzwK76DnB6ts",
+        "hotkey": "5EtRJiepH5zkFjMi6MLW3YgWE6WLp7S89WXzYuAVR5QncBVN",
+        "alpha_stake": "0.0",
+        "tao_balance": "0.0",
+        "incentive": "0.0071564813",
+        "emission": "1.058383905",
+        "rank_change": "-4",
+        "alpha_change": "0.0",
+        "tao_change": "0.0"
       }
     ]
   },
@@ -7658,24 +8033,39 @@
     "uid": 231,
     "coldkey": "5Homegv9NhwP7jJxxorpb59MJkJsrVmgUfVTrJjAhAR2ApzD",
     "hotkey": "5GCUrfzgdn2mbgQeE985PU9dy85dmhSdy4fSics6dz9eqHeF",
-    "snapshots": 1,
+    "snapshots": 2,
     "best_rank": 10,
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "history": [
+      {
+        "observed_at": "2026-11-25T08:27:54+00:00",
+        "date": "2026-11-25",
+        "rank": "10",
+        "uid": "231",
+        "coldkey": "5Homegv9NhwP7jJxxorpb59MJkJsrVmgUfVTrJjAhAR2ApzD",
+        "hotkey": "5GCUrfzgdn2mbgQeE985PU9dy85dmhSdy4fSics6dz9eqHeF",
+        "alpha_stake": "21.317311117",
+        "tao_balance": "0.0",
+        "incentive": "0.0165560388",
+        "emission": "2.445752654",
+        "rank_change": "",
+        "alpha_change": "",
+        "tao_change": ""
+      },
       {
         "uid": 231,
         "coldkey": "5Homegv9NhwP7jJxxorpb59MJkJsrVmgUfVTrJjAhAR2ApzD",
         "hotkey": "5GCUrfzgdn2mbgQeE985PU9dy85dmhSdy4fSics6dz9eqHeF",
-        "alpha_stake": 21.317311117,
+        "alpha_stake": 46.988795261,
         "tao_balance": 0.0,
-        "incentive": 0.0165560388,
-        "emission": 2.445752654,
-        "rank": 10,
-        "observed_at": "2026-11-25T08:27:54+00:00",
-        "date": "2026-11-25",
-        "rank_change": null,
-        "alpha_change": null,
-        "tao_change": null
+        "incentive": 0.009781033,
+        "emission": 1.44387153,
+        "rank": 13,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": -3,
+        "alpha_change": 25.671484144,
+        "tao_change": 0.0
       }
     ]
   },
@@ -7688,16 +8078,116 @@
     "last_seen": "2026-11-25",
     "history": [
       {
-        "uid": 54,
-        "coldkey": "5HYCF3MY98cfcJnytsGNTAZSXNG3eZ6EMRZFxHxgtkPLhRRZ",
-        "hotkey": "5EoE1KANjaunV232uX2vcvZiKH2RVKaYaqewwwdUpSHU4UYv",
-        "alpha_stake": 51.310383986,
-        "tao_balance": 0.0,
-        "incentive": 0.0109407187,
-        "emission": 1.616914142,
-        "rank": 13,
         "observed_at": "2026-11-25T08:27:54+00:00",
         "date": "2026-11-25",
+        "rank": "13",
+        "uid": "54",
+        "coldkey": "5HYCF3MY98cfcJnytsGNTAZSXNG3eZ6EMRZFxHxgtkPLhRRZ",
+        "hotkey": "5EoE1KANjaunV232uX2vcvZiKH2RVKaYaqewwwdUpSHU4UYv",
+        "alpha_stake": "51.310383986",
+        "tao_balance": "0.0",
+        "incentive": "0.0109407187",
+        "emission": "1.616914142",
+        "rank_change": "",
+        "alpha_change": "",
+        "tao_change": ""
+      }
+    ]
+  },
+  "239": {
+    "uid": 239,
+    "coldkey": "5D4umxP1NKbWGBcF3XEmKqweTM8CNFY4guEJeoPXKfdf2hEY",
+    "hotkey": "5Dhwu3CFcHP2u39iw51564YSLVhydwnpiM4ehZC7VTvu5NAi",
+    "snapshots": 1,
+    "best_rank": 3,
+    "last_seen": "2026-11-26",
+    "history": [
+      {
+        "uid": 239,
+        "coldkey": "5D4umxP1NKbWGBcF3XEmKqweTM8CNFY4guEJeoPXKfdf2hEY",
+        "hotkey": "5Dhwu3CFcHP2u39iw51564YSLVhydwnpiM4ehZC7VTvu5NAi",
+        "alpha_stake": 7.44e-07,
+        "tao_balance": 0.0,
+        "incentive": 0.1358205539,
+        "emission": 20.048804972,
+        "rank": 3,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": null,
+        "alpha_change": null,
+        "tao_change": null
+      }
+    ]
+  },
+  "204": {
+    "uid": 204,
+    "coldkey": "5Fha4pxKmpP55oM8ar3p8eZgiJJQREcxyF4CDB2QeqxKba3M",
+    "hotkey": "5DLDytHwrsPdu6NNJMNNGvMTue6Qhntq8QLwLWK5nydQhb79",
+    "snapshots": 1,
+    "best_rank": 4,
+    "last_seen": "2026-11-26",
+    "history": [
+      {
+        "uid": 204,
+        "coldkey": "5Fha4pxKmpP55oM8ar3p8eZgiJJQREcxyF4CDB2QeqxKba3M",
+        "hotkey": "5DLDytHwrsPdu6NNJMNNGvMTue6Qhntq8QLwLWK5nydQhb79",
+        "alpha_stake": 16.149612539,
+        "tao_balance": 0.0,
+        "incentive": 0.0259555962,
+        "emission": 3.832454978,
+        "rank": 4,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": null,
+        "alpha_change": null,
+        "tao_change": null
+      }
+    ]
+  },
+  "52": {
+    "uid": 52,
+    "coldkey": "5CiMQTgTKNEZ6uvm5gappvn4FD8jvvvYmMLhYvRMMqYQSskU",
+    "hotkey": "5DPxnctCTzievrsuzQvdTkfmxXck2JGBTYeTtwZ45SAjwe6D",
+    "snapshots": 1,
+    "best_rank": 20,
+    "last_seen": "2026-11-26",
+    "history": [
+      {
+        "uid": 52,
+        "coldkey": "5CiMQTgTKNEZ6uvm5gappvn4FD8jvvvYmMLhYvRMMqYQSskU",
+        "hotkey": "5DPxnctCTzievrsuzQvdTkfmxXck2JGBTYeTtwZ45SAjwe6D",
+        "alpha_stake": 48.95657995,
+        "tao_balance": 0.0,
+        "incentive": 0.0072938125,
+        "emission": 1.077995204,
+        "rank": 20,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
+        "rank_change": null,
+        "alpha_change": null,
+        "tao_change": null
+      }
+    ]
+  },
+  "186": {
+    "uid": 186,
+    "coldkey": "5GEmiG3o9MkVPcacGsdHuW95jVW8FX1QFvvUvrnBY4X6qbAE",
+    "hotkey": "5F9VNoRNFAnPFo6YHTk2K4izxyjbk5kQ4VoBbgFd7pUvnASo",
+    "snapshots": 1,
+    "best_rank": 23,
+    "last_seen": "2026-11-26",
+    "history": [
+      {
+        "uid": 186,
+        "coldkey": "5GEmiG3o9MkVPcacGsdHuW95jVW8FX1QFvvUvrnBY4X6qbAE",
+        "hotkey": "5F9VNoRNFAnPFo6YHTk2K4izxyjbk5kQ4VoBbgFd7pUvnASo",
+        "alpha_stake": 43.736856688,
+        "tao_balance": 0.0,
+        "incentive": 0.006271458,
+        "emission": 0.927459431,
+        "rank": 23,
+        "observed_at": "2026-11-26T08:12:39+00:00",
+        "date": "2026-11-26",
         "rank_change": null,
         "alpha_change": null,
         "tao_change": null
