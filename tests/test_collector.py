@@ -32,9 +32,23 @@ def test_history_uses_documented_timestamp_params():
     TaoStats("test-key",base_url="https://example.test/v1",opener=opener).fetch(
         28, "2026-01-01T00:15:00+00:00")
     assert "metagraph/history?" in seen["url"]
-    assert "timestamp_start=1767226500" in seen["url"]
-    assert "timestamp_end=1767312900" in seen["url"]
+    assert "timestamp_start=1767225600" in seen["url"]
+    assert "timestamp_end=1767227400" in seen["url"]
     assert "order_by=timestamp" in seen["url"]
+
+def test_history_deduplicates_uid_to_nearest_snapshot():
+    class HistoryResponse(Response):
+        def read(self):
+            return json.dumps({"data":[
+                {"uid":7,"timestamp":"2026-01-01T00:00:00+00:00","validator_trust":0},
+                {"uid":7,"timestamp":"2026-01-01T00:16:00+00:00","validator_trust":0},
+                {"uid":8,"timestamp":"2026-01-01T00:14:00+00:00","validator_trust":0},
+            ]}).encode()
+    client=TaoStats("test-key",base_url="https://example.test/v1",
+                    opener=lambda request,timeout: HistoryResponse(),sleep=lambda _:None)
+    rows=client.fetch(28,"2026-01-01T00:15:00+00:00")
+    assert {r["uid"]:r["timestamp"] for r in rows} == {
+        7:"2026-01-01T00:16:00+00:00",8:"2026-01-01T00:14:00+00:00"}
 
 def test_api_error_includes_redacted_response_body():
     def opener(request, timeout):
@@ -103,3 +117,12 @@ def test_collect_rejects_empty_api_response(tmp_path, monkeypatch):
     monkeypatch.setattr(TaoStats, "fetch", lambda self, netuid, at=None: [])
     with pytest.raises(RuntimeError, match="zero eligible miners"):
         collect(api_key="test-key", data_dir=tmp_path)
+
+def test_backfill_preserves_latest_snapshot(tmp_path, monkeypatch):
+    (tmp_path/"latest.json").write_text(json.dumps({"observed_at":"2026-01-02T00:15:00+00:00","top":[]}))
+    (tmp_path/"snapshots.csv").write_text(
+        "observed_at,date,rank,uid,coldkey,hotkey,alpha_stake,tao_balance,incentive,emission,rank_change,alpha_change,tao_change\n")
+    monkeypatch.setattr(TaoStats, "fetch", lambda self, netuid, at=None: [
+        {"uid":7,"validator_trust":0,"emission":1000000000,"alpha_stake":2000000000}])
+    collect(api_key="test-key", data_dir=tmp_path, observed="2026-01-01T00:15:00+00:00")
+    assert json.loads((tmp_path/"latest.json").read_text())["observed_at"] == "2026-01-02T00:15:00+00:00"
